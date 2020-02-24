@@ -12,6 +12,9 @@ app.get("/", function(req, res){
     res.status(200).send("Hello World!");
 })
 
+// SET PUBLIC FOLDER
+app.use(express.static(__dirname + "/public"));
+
 const server = app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server partito!");
 })
