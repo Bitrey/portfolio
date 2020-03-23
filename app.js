@@ -4,12 +4,14 @@ const app = express();
 require("dotenv").config();
 const bodyParser = require("body-parser");
 
+app.set("view engine", "ejs");
+
 // BODY PARSER SETUP
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", function(req, res){
-    res.status(200).send("Hello World!");
+    res.render("index");
 })
 
 // SET PUBLIC FOLDER
