@@ -33,7 +33,9 @@ body {
 }
 
 #section6 {
+    padding-top: 7vh;
     background-color: #f7f7f7;
+    height: 60vh;
 }
 
 .section-title {
@@ -67,6 +69,10 @@ body {
 
 .main-header .main-subheader {
     font-size: 1.2rem;
+}
+
+.navbar {
+    background-color: rgba(29, 9, 36, 0.5);
 }
 
 /* Su computer */
