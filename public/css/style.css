@@ -28,6 +28,10 @@ body {
     background-color: #f7f7f7;
 }
 
+.nav-link {
+    transition-duration: 0.2s;
+}
+
 #section4 {
     background-color: #f7f7f7;
 }
