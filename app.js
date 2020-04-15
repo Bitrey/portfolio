@@ -104,7 +104,7 @@ app.get("/", (req, res) => {
 app.post("/contact", async (req, res) => {
     
     if(!req.body.captcha){
-        return res.json({ success: false, msg: 'Risolvi il CAPTCHA per continuare' });
+        return res.status(401).json({ success: false, msg: 'Risolvi il CAPTCHA per continuare' });
     }
 
     // Secret key
@@ -123,7 +123,7 @@ app.post("/contact", async (req, res) => {
 
     // If not successful
     if (body.success !== undefined && !body.success)
-    return res.json({ success: false, msg: 'Failed captcha verification' });
+    return res.status(401).json({ success: false, msg: 'Failed captcha verification' });
 
     // If successful
     res.json({ success: true, msg: 'Captcha passed' });
