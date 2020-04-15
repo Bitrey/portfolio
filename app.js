@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const sanitizeHtml = require('sanitize-html');
-const fetch = require('isomorphic-fetch');
+// const fetch = require('isomorphic-fetch');
+import { load } from 'recaptcha-v3'
 require("dotenv").config();
 
 // MONGOOSE SETUP
@@ -18,6 +19,12 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.MONGODB_URI, function(){
     console.log("Database connesso!");
 });
+
+load('6Lfq6ekUAAAAAORskahG7570ILzpjEs9q7hgBafp').then((recaptcha) => {
+    recaptcha.execute('portfolio').then((token) => {
+        console.log(token) // Will print the token
+      })
+})
 
 app.post('/send', (req, res) => {
     const secret_key = process.env.SECRET_KEY;
