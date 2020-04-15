@@ -1,16 +1,29 @@
 <%- include ('./partials/header') %>
 
-<main>
+<main class="animsition">
     <div class="section" id="section1">
+
         <div class="container text-center main-header mx-auto">
             <img src="/img/bitrey-logo-text.png" alt="Bitrey Logo Text" class="text-logo">
-            <h1>Ciao, sono Alessandro, e sviluppo siti web.</h1>
-            <p>Lo sapevi? Il 93% delle decisioni di acquisto inizia con una ricerca su Internet</p>
+            <h1>
+                <div class="animate-typing" data-type-speed="70" data-cursor-speed="800">
+                    Ciao, sono Alessandro, e sviluppo siti web.
+                </div>
+            </h1>
+            <p id="header-reminder" style="display: none;">Lo sapevi? Il 93% delle decisioni di acquisto inizia con una ricerca su Internet</p>
             <a id="topScroller" style="display: none;" href="#section2"><span></span><span></span><span></span></a>
         </div>
+
+        <div id="section1-background">
+            <img id="section1-background-img" src="/img/background.jpg" alt="Sfondo">
+        </div>
+
     </div>
     <div class="section" id="section2">
-        <div class="container text-center main-header mx-auto">
+
+        <!-- particles.js container -->
+
+        <div class="container text-center main-header mx-auto" style="z-index: 2;">
             <h1>Di cosa mi occupo</h1>
             <p class="main-subheader">Sono un programmatore web full-stack di Modena.
                 <br>Mi occupo di ogni parte del sito, dal design al codice, utilizzando le ultime tecnologie e tecniche, rendendolo unico e adatto a tutti i dispositivi.
@@ -39,7 +52,7 @@
                             <br>MongoDB, Express, Node.js
                         </p>
                         <p>
-                            <span class="purple-title">Alcuni dei moduli che so usare</span>
+                            <span class="purple-title">Alcuni dei moduli che uso</span>
                             <br>Passport.io
                             <br>Google oAuth 2.0
                             <br>Mongoose
@@ -50,6 +63,9 @@
                 </div>
             </p>
         </div>
+        
+        <div id="particles-js"></div>
+
     </div>
     <div class="section" id="section3">
         <div class="container text-center main-header mx-auto">
@@ -104,6 +120,11 @@
                 </div>
             </p>
         </div>
+
+        <div id="section4-background">
+            <img id="section4-background-img" src="/img/section-background.png" alt="Sfondo">
+        </div>
+
     </div>
     <div class="section" id="section5">
         <div class="container text-center main-header mx-auto">
@@ -159,6 +180,16 @@
             </p>
         </div>
     </div>
+    <p class="text-center py-2" style="font-size: 0.8rem;">
+        Attributi immagine riquadri: 
+        <a style="color: black;" href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline - www.freepik.com</a>
+    </p>
 </main>
 
 <%- include ('./partials/footer') %>
+
+<script src="/js/jquery.animateTyping.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.4.0/dist/simpleParallax.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
+<script src="/js/homepage.min.js" defer></script>
