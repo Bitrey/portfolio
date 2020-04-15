@@ -19,7 +19,7 @@ mongoose.connect(process.env.MONGODB_URI, function(){
     console.log("Database connesso!");
 });
 
-const handleSend = (req, res) => {
+app.post('/send', (req, res) => {
     const secret_key = process.env.SECRET_KEY;
     const token = req.body.token;
     const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${token}`;
@@ -33,9 +33,7 @@ const handleSend = (req, res) => {
             res.json({ google_response });
         })
         .catch(error => res.json({ error }));
-};
-
-app.post('/send', handleSend);
+});
 
 const projectSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now },

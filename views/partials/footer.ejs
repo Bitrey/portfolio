@@ -22,8 +22,8 @@
                 body: JSON.stringify(data)
             })
                 .then(response => response.text())
-                .then(text => console.log(text))
-                .catch(error => console.log(error));
+                .then(text => console.log({msg: "Connessione a reCAPTCHA riuscita", text}))
+                .catch(error => console.log({msg: "Connessione a reCAPTCHA fallita", error}));
         });
     });
 </script>
