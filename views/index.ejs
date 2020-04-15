@@ -5,11 +5,9 @@
 
         <div class="container text-center main-header mx-auto">
             <img src="/img/bitrey-logo-text.png" alt="Bitrey Logo Text" class="text-logo">
-            <h1>
-                <div class="animate-typing" data-type-speed="70" data-cursor-speed="800">
-                    Ciao, sono Alessandro, e sviluppo siti web.
-                </div>
-            </h1>
+            <div class="animate-typing" data-type-speed="70" data-cursor-speed="800" style="font-size: 5rem; font-weight: 700;">
+                Ciao, sono Alessandro, e sviluppo siti web.
+            </div>
             <p id="header-reminder" style="display: none;">Lo sapevi? Il 93% delle decisioni di acquisto inizia con una ricerca su Internet</p>
             <a id="topScroller" style="display: none;" href="#section2"><span></span><span></span><span></span></a>
         </div>
@@ -25,7 +23,7 @@
 
         <div class="container text-center main-header mx-auto" style="z-index: 2;">
             <h1>Di cosa mi occupo</h1>
-            <p class="main-subheader">Sono un programmatore web full-stack di Modena.
+            <div class="main-subheader">Sono un programmatore web full-stack di Modena.
                 <br>Mi occupo di ogni parte del sito, dal design al codice, utilizzando le ultime tecnologie e tecniche, rendendolo unico e adatto a tutti i dispositivi.
                 <div class="row justify-content-around mt-5">
                     <div class="col-6 col-lg-4">
@@ -61,7 +59,7 @@
                         </p>
                     </div>
                 </div>
-            </p>
+            </div>
         </div>
         
         <div id="particles-js"></div>
@@ -70,7 +68,7 @@
     <div class="section" id="section3">
         <div class="container text-center main-header mx-auto">
             <h1>Su cosa punto</h1>
-            <p class="main-subheader">
+            <div class="main-subheader">
                 <div class="row justify-content-around mt-5">
                     <div class="col-6 col-lg-4">
                         <img src="/img/responsive.svg" alt="Responsive" class="section-img">
@@ -98,13 +96,13 @@
                         </p>
                     </div>
                 </div>
-            </p>
+            </div>
         </div>
     </div>
     <div class="section" id="section4">
         <div class="container text-center main-header mx-auto">
             <h1>Sempre all'avanguardia</h1>
-            <p class="main-subheader">
+            <div class="main-subheader">
                 Le richieste e le necessità dei siti web cambiano di anno in anno: in questo campo non si può restare indietro.
                 <br>Per questo utilizzo le ultimissime tecnologie, restando sempre aggiornato.
                 <div class="row justify-content-around mt-lg-2">
@@ -118,7 +116,7 @@
                         <img src="/img/mysqlmongo.svg" alt="MySQL MongoDB" class="img-fluid">
                     </div>
                 </div>
-            </p>
+            </div>
         </div>
 
         <div id="section4-background">
@@ -129,10 +127,10 @@
     <div class="section" id="section5">
         <div class="container text-center main-header mx-auto">
             <h1>Piano annuale</h1>
-            <p class="main-subheader">
+            <div class="main-subheader">
                 Se sei esperto nell'hosting e manutenzione di siti web, posso consegnarti tutti i file in modo che te li puoi gestire come vuoi.
                 <br>Altrimenti puoi usufruire del conveniente piano annuale, che include:
-            </p>
+            </div>
             <div class="row justify-content-around mt-5">
                 <div class="col-6 col-lg-3">
                     <img src="/img/server.svg" alt="Hosting" class="section-img">
@@ -172,51 +170,56 @@
         </div>
     </div>
     <div class="section" id="section6">
-        <div class="container text-center main-header mx-auto">
+        <div class="container text-center main-header mx-auto" id="section6-subdiv">
             <h1>Interessato? Parliamo!</h1>
             <div class="main-subheader">
-                <form action="/contact" method="post" class="mt-3 mb-5">
+                <form action="/contact" method="post" class="mt-3 mb-5" id="emailForm">
                     <div class="row justify-content-center">
                         <div class="col-6 col-lg-4">
                             <label for="name" class="mb-0 mb-md-2">Nome</label>
-                            <input type="text" class="form-control" id="name" placeholder="Giuseppe" name="name">
+                            <input type="text" class="form-control" id="name" placeholder="Giuseppe" name="name" required>
                         </div>
                         <div class="col-6 col-lg-4">
                             <label for="surname" class="mb-0 mb-md-2">Cognome</label>
-                            <input type="text" class="form-control" id="surname" placeholder="Marchioni" name="surname">
+                            <input type="text" class="form-control" id="surname" placeholder="Marchioni" name="surname" required>
                         </div>
                         <div class="col-6 col-lg-4">
                             <label for="email" class="mb-0 mb-md-2">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="pino@chiararocca.it" name="email">
+                            <input type="email" class="form-control" id="email" placeholder="pino@chiararocca.it" name="email" required>
                         </div>
                     </div>
                     <div class="row pt-3">
-                        <div class="col-12">
+                        <div class="col-12" id="editor-col">
                             <div id="editor">
                               <p>Ciao Alessandro,</p>
                               <p>vorrei chiederti una cosa...</p>
                               <p><br></p>
                             </div>
                         </div>
-                        <input type="hidden" id="text" name="text" style="display: none;">
+                        <input type="hidden" id="bodyText" name="text" style="display: none;">
                     </div>
-                    <button class="mt-5 pt-5" id="sendForm" type="submit">Invia</button>
+                    <div style="position: relative; margin-top: 100px; height: 20px;">
+                        <button id="sendForm" type="submit">Invia</button>
+                    </div>
+                    <p id="error" style="display: none;"></p>
                 </form>
-                <p>Oppure puoi contattarmi su <a href="mailto:info@bitrey.it">info@bitrey.it</a></p>
+                <p>Oppure puoi contattarmi su <a href="mailto:info@bitrey.it" style="color: #752b8c;">info@bitrey.it</a></p>
             </div>
         </div>
-        <p class="text-center py-2" style="font-size: 0.8rem;">
+        <div class="text-center py-2 mt-3" style="font-size: 0.8rem;">
             Attributi immagine riquadri: 
-            <a style="color: black;" href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline - www.freepik.com</a>
-        </p>
+            <a style="color: #212529;" target="_blank" href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline - www.freepik.com</a>
+            <br>Freccia tasto invio: <a style="color: #212529;" target="_blank" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        </div>
     </div>
 </main>
 
 <%- include ('./partials/footer') %>
 
 <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-<script src="/js/jquery.animateTyping.js"></script>
+<script src="/js/jquery.animateTyping.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.4.0/dist/simpleParallax.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
 <script src="/js/homepage.min.js" defer></script>
