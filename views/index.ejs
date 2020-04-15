@@ -173,7 +173,7 @@
         <div class="container text-center main-header mx-auto" id="section6-subdiv">
             <h1>Interessato? Parliamo!</h1>
             <div class="main-subheader">
-                <form action="/contact" method="post" class="mt-3 mb-5" id="emailForm">
+                <form class="mt-3 mb-5" id="emailForm">
                     <div class="row justify-content-center">
                         <div class="col-6 col-lg-4">
                             <label for="name" class="mb-0 mb-md-2">Nome</label>
@@ -198,9 +198,11 @@
                         </div>
                         <input type="hidden" id="bodyText" name="text" style="display: none;">
                     </div>
-                    <div style="position: relative; margin-top: 100px; height: 20px;">
+                    <div style="display: block; margin-top: 100px;" class="mx-auto text-center">
                         <div class="g-recaptcha" data-sitekey="6LdL6ekUAAAAAG-HmaWXFj8H6l29jsUGVv33rIv1"></div>
                         <br/>
+                    </div>
+                    <div style="position: relative; height: 20px;">
                         <button id="sendForm" type="submit">Invia</button>
                     </div>
                     <p id="error" style="display: none;"></p>
@@ -223,5 +225,4 @@
 <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.4.0/dist/simpleParallax.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js"></script>
 <script src="/js/homepage.min.js" defer></script>

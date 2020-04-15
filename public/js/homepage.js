@@ -177,7 +177,8 @@ let quill = new Quill('#editor', {
 let formBtn = $("#sendForm");
 let oldHTML;
 
-$("#emailForm").submit(function(){
+$("#emailForm").submit(function(e){
+    e.preventDefault();
     $("#bodyText").val($(".ql-editor").html());
     quill.enable(false);
     $("#error").hide();
@@ -186,7 +187,20 @@ $("#emailForm").submit(function(){
     }
     formBtn.html(`<img src="/img/spinner.svg" alt="Caricamento">`);
     formBtn.prop("disabled", true);
-    $(this).ajaxSubmit({
+    
+    const name = document.getElementById('name').value;
+    const surname = document.getElementById('surname').value;
+    const email = document.getElementById('email').value;
+    const text = document.getElementsByClassName('ql-editor')[0].innerHTML;
+    const captcha = document.getElementById('g-recaptcha-response').value;
+
+    $.ajax({
+        data: JSON.stringify({ name, surname, email, text, captcha }),
+        method: "POST",
+        url: "/contact",
+        headers: {
+            'Content-type': 'application/json'
+        },
         error: function(){
             formBtn.html(oldHTML);
             quill.enable(false);

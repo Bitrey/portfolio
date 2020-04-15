@@ -5,8 +5,8 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const sanitizeHtml = require('sanitize-html');
-// const fetch = require('isomorphic-fetch');
-import { load } from 'recaptcha-v3'
+const fetch = require('node-fetch');
+const { stringify } = require('querystring');
 require("dotenv").config();
 
 // MONGOOSE SETUP
@@ -18,28 +18,6 @@ mongoose.set('useUnifiedTopology', true);
 // CONNECT TO MONGODB
 mongoose.connect(process.env.MONGODB_URI, function(){
     console.log("Database connesso!");
-});
-
-load('6Lfq6ekUAAAAAORskahG7570ILzpjEs9q7hgBafp').then((recaptcha) => {
-    recaptcha.execute('portfolio').then((token) => {
-        console.log(token) // Will print the token
-      })
-})
-
-app.post('/send', (req, res) => {
-    const secret_key = process.env.SECRET_KEY;
-    const token = req.body.token;
-    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${token}`;
-
-    fetch(url, {
-        method: 'post'
-    })
-        .then(response => response.json())
-        .then(google_response => {
-            console.log({ google_response });
-            res.json({ google_response });
-        })
-        .catch(error => res.json({ error }));
 });
 
 const projectSchema = new mongoose.Schema({
@@ -123,11 +101,34 @@ app.get("/", (req, res) => {
     res.render("index");
 })
 
-app.post("/contact", (req, res) => {
-    setTimeout(() => {
-        sendMail(req.body);
-        res.send("Ok");
-    }, 2000);
+app.post("/contact", async (req, res) => {
+    
+    if(!req.body.captcha){
+        return res.json({ success: false, msg: 'Risolvi il CAPTCHA per continuare' });
+    }
+
+    // Secret key
+    const secretKey = process.env.SECRET_KEY;
+
+    // Verify URL
+    const query = stringify({
+        secret: secretKey,
+        response: req.body.captcha,
+        remoteip: req.connection.remoteAddress
+    });
+    const verifyURL = `https://google.com/recaptcha/api/siteverify?${query}`;
+
+    // Make a request to verifyURL
+    const body = await fetch(verifyURL).then(res => res.json());
+
+    // If not successful
+    if (body.success !== undefined && !body.success)
+    return res.json({ success: false, msg: 'Failed captcha verification' });
+
+    // If successful
+    res.json({ success: true, msg: 'Captcha passed' });
+
+    sendMail(req.body);
 });
 
 const server = app.listen(process.env.PORT, process.env.IP, () => {
