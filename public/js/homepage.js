@@ -201,11 +201,17 @@ $("#emailForm").submit(function(e){
         headers: {
             'Content-type': 'application/json'
         },
-        error: function(){
+        error: function(r){
             formBtn.html(oldHTML);
             quill.enable(false);
             formBtn.prop("disabled", false);
-            $("#error").show().text("Si è verificato un errore nell'invio della richiesta, si prega di inviare una mail");
+            if(r.responseJSON == "Risolvi il CAPTCHA per continuare"){
+                $("#error").show().text(r.responseJSON);
+            } else if(r.responseJSON == "Verifica del CAPTCHA fallita"){
+                $("#error").show().text(r.responseJSON + ", riprova");
+            } else {
+                $("#error").show().text("Si è verificato un errore nell'invio della richiesta, si prega di inviare una mail");
+            }
         },
         success: function(){
             formBtn.remove();

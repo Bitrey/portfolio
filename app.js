@@ -123,7 +123,7 @@ app.post("/contact", async (req, res) => {
 
     // If not successful
     if (body.success !== undefined && !body.success)
-    return res.status(401).json({ success: false, msg: 'Failed captcha verification' });
+    return res.status(401).json({ success: false, msg: 'Verifica del CAPTCHA fallita' });
 
     // If successful
     res.json({ success: true, msg: 'Captcha passed' });
