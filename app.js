@@ -35,11 +35,10 @@ let message = {
 function sendMail(){
     transporter.sendMail(message, function(err, info){
         if(err){
-            console.log("Errore nell'invio della mail!");
+            console.log("Errore nell'invio di una mail!");
             console.error(err);
         } else {
-            console.log("Mail inviata!");
-            console.log(info);
+            console.log("Nuova mail inviata!");
         }
     });
 }
@@ -56,21 +55,6 @@ app.get("/", (req, res) => {
 
 // SET PUBLIC FOLDER
 app.use(express.static(__dirname + "/public"));
-
-// nodeoutlook.sendEmail({
-//     auth: {
-//         user: process.env.EMAIL_ADDRESS,
-//         pass: process.env.EMAIL_PASSWORD
-//     },
-//     from: `"Bitrey.it Contact Form" info@bitrey.it`,
-//     to: process.env.EMAIL_ADDRESS,
-//     subject: 'Bitrey.it Contact Form!',
-//     html: '<b>Email di prova</b>',
-//     text: 'This is text version!',
-//     replyTo: 'receiverXXX@gmail.com',
-//     onError: (err) => console.log({msg: "Errore nell'invio della mail!", err}),
-//     onSuccess: (i) => console.log({msg: "Email inviata!", i})
-// });
 
 const server = app.listen(process.env.PORT, process.env.IP, () => {
     console.log("Server partito!");

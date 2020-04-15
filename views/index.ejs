@@ -174,10 +174,21 @@
     <div class="section" id="section6">
         <div class="container text-center main-header mx-auto">
             <h1>Interessato? Parliamo!</h1>
-            <p class="main-subheader">
-                Per qualunque tipo di informazione, non esitare a contattarmi su
-                <a href="mailto:info@bitrey.it">info@bitrey.it</a>
-            </p>
+            <div class="main-subheader">
+                <form action="/contact" method="post" class="mt-3 mb-5">
+                    <div class="row">
+                        <div class="col">
+                            <label for="name" class="mb-0 mb-md-2">Nome</label>
+                            <input type="text" class="form-control" id="name" placeholder="Giuseppe" name="name">
+                        </div>
+                        <div class="col">
+                            <label for="surname" class="mb-0 mb-md-2">Cognome</label>
+                            <input type="text" class="form-control" id="surname" placeholder="Marchioni" name="surname">
+                        </div>
+                    </div>
+                </form>
+                <p>Oppure puoi contattarmi su <a href="mailto:info@bitrey.it">info@bitrey.it</a></p>
+            </div>
         </div>
     </div>
     <p class="text-center py-2" style="font-size: 0.8rem;">
