@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const sanitizeHtml = require('sanitize-html');
+const fetch = require('isomorphic-fetch');
 require("dotenv").config();
 
 // MONGOOSE SETUP
@@ -17,6 +18,24 @@ mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.MONGODB_URI, function(){
     console.log("Database connesso!");
 });
+
+const handleSend = (req, res) => {
+    const secret_key = process.env.SECRET_KEY;
+    const token = req.body.token;
+    const url = `https://www.google.com/recaptcha/api/siteverify?secret=${secret_key}&response=${token}`;
+
+    fetch(url, {
+        method: 'post'
+    })
+        .then(response => response.json())
+        .then(google_response => {
+            console.log({ google_response });
+            res.json({ google_response });
+        })
+        .catch(error => res.json({ error }));
+};
+
+app.post('/send', handleSend);
 
 const projectSchema = new mongoose.Schema({
     date: { type: Date, default: Date.now },

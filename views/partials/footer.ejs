@@ -5,6 +5,28 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js?render=6Lfq6ekUAAAAAORskahG7570ILzpjEs9q7hgBafp"></script>
+<script>
+    grecaptcha.ready(function() {
+        grecaptcha.execute('6Lfq6ekUAAAAAORskahG7570ILzpjEs9q7hgBafp', {action: 'homepage'}).then(function(token){
+            var data = {
+                test: "hello",
+                token: token
+            };
+            fetch('/send', {
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                method: 'post',
+                body: JSON.stringify(data)
+            })
+                .then(response => response.text())
+                .then(text => console.log(text))
+                .catch(error => console.log(error));
+        });
+    });
+</script>
 </body>
 
 </html>
