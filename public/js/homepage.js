@@ -206,9 +206,9 @@ $("#emailForm").submit(function(e){
             quill.enable(false);
             formBtn.prop("disabled", false);
             if(r.responseJSON.msg == "Risolvi il CAPTCHA per continuare"){
-                $("#error").show().text(r.responseJSON);
+                $("#error").show().text(r.responseJSON.msg);
             } else if(r.responseJSON.msg == "Verifica del CAPTCHA fallita"){
-                $("#error").show().text(r.responseJSON + ", riprova");
+                $("#error").show().text(r.responseJSON.msg + ", riprova");
             } else {
                 $("#error").show().text("Si è verificato un errore nell'invio della richiesta, si prega di inviare una mail");
                 console.log(r.responseJSON.msg);
