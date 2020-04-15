@@ -2,9 +2,31 @@
 const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
+const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
 const sanitizeHtml = require('sanitize-html');
 require("dotenv").config();
+
+// MONGOOSE SETUP
+mongoose.set('useNewUrlParser', true);
+mongoose.set('useFindAndModify', false);
+mongoose.set('useCreateIndex', true);
+mongoose.set('useUnifiedTopology', true);
+
+// CONNECT TO MONGODB
+mongoose.connect(process.env.MONGODB_URI, function(){
+    console.log("Database connesso!");
+});
+
+const projectSchema = new mongoose.Schema({
+    date: { type: Date, default: Date.now },
+    name: String,
+    surname: String,
+    email: String,
+    text: String
+});
+
+const Project = mongoose.model("Project", projectSchema);
 
 let transporter = nodemailer.createTransport({
     host: process.env.MAIL_SERVER,
@@ -27,21 +49,33 @@ transporter.verify(function(err, success) {
 });
 
 class Message {
-    constructor(body){
+    constructor(email){
         this.from = "\"Bitrey.it CONTACT FORM\" info@bitrey.it";
         this.to = "alessandro.amella@live.it";
         this.subject = 'Bitrey.it Contact Form!';
-        this.html = `<span style="font-size: 1.3rem"><strong>NUOVO CONTATTO DA BITREY.IT!</strong><br><br><strong>Nome:</strong> ${body.name}<br><strong>Cognome:</strong> ${body.surname}<br><strong>Email:</strong><br>****************************************</span>${sanitizeHtml(body.text, {
-            allowedTags: [ 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol', 'em', 'u',
-                'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'del', 'br', 'div', 's',
-                'table', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre', 'iframe', 'span',
-                'dd', 'dl', , 'dt', 'h1', 'h2', 'img', 'sup', 'sup' ]
-        })}<br>****************************************`;
+        this.html = `<span style="font-size: 1.3rem"><strong>NUOVO CONTATTO DA BITREY.IT!</strong><br><br><strong>Nome:</strong> ${email.body.name}<br><strong>Cognome:</strong> ${email.body.surname}<br><strong>Email:</strong> ${email.body.email}<br><strong>Testo:</strong><br>****************************************</span>${email.sanitizedEmail}<br>****************************************`;
     }
 }
 
-function sendMail(body){
-    let messageObj = new Message(body);
+const sendMail = (body) => {
+    const sanitizedEmail = sanitizeHtml(body.text, {
+        allowedTags: [ 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol', 'em', 'u',
+            'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'del', 'br', 'div', 's',
+            'table', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre', 'iframe', 'span',
+            'dd', 'dl', , 'dt', 'h1', 'h2', 'img', 'sup', 'sup' ]
+    });
+    const newProject = new Project({
+        name: body.name,
+        surname: body.surname,
+        email: body.email,
+        text: sanitizedEmail
+    });
+    newProject.save(function(err){
+        if(err){
+            console.error(err);
+        }
+    });
+    const messageObj = new Message({body, sanitizedEmail});
     transporter.sendMail(messageObj, function(err, info){
         if(err){
             console.log("Errore nell'invio di una mail!");
