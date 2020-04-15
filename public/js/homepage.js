@@ -205,12 +205,13 @@ $("#emailForm").submit(function(e){
             formBtn.html(oldHTML);
             quill.enable(false);
             formBtn.prop("disabled", false);
-            if(r.responseJSON == "Risolvi il CAPTCHA per continuare"){
+            if(r.responseJSON.msg == "Risolvi il CAPTCHA per continuare"){
                 $("#error").show().text(r.responseJSON);
-            } else if(r.responseJSON == "Verifica del CAPTCHA fallita"){
+            } else if(r.responseJSON.msg == "Verifica del CAPTCHA fallita"){
                 $("#error").show().text(r.responseJSON + ", riprova");
             } else {
                 $("#error").show().text("Si è verificato un errore nell'invio della richiesta, si prega di inviare una mail");
+                console.log(r.responseJSON.msg);
             }
         },
         success: function(){
