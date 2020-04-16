@@ -270,3 +270,7 @@ body {
     font-weight: 700;
     color: rgb(199, 0, 76);
 }
+.g-recaptcha, .g-recaptcha div {
+    margin-left: auto;
+    margin-right: auto;
+}
