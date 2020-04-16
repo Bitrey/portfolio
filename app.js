@@ -59,7 +59,7 @@ class Message {
     }
 }
 
-const sendMail = (body) => {
+const sendMail = (body, res) => {
     const sanitizedEmail = sanitizeHtml(body.text, {
         allowedTags: [ 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol', 'em', 'u',
             'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'del', 'br', 'div', 's',
@@ -74,16 +74,21 @@ const sendMail = (body) => {
     });
     newProject.save(function(err){
         if(err){
-            console.error(err);
-        }
-    });
-    const messageObj = new Message({body, sanitizedEmail});
-    transporter.sendMail(messageObj, function(err, info){
-        if(err){
-            console.log("Errore nell'invio di una mail!");
+            // If successful
+            res.json({ success: false, msg: 'Errore nel salvataggio nel database' });
             console.error(err);
         } else {
-            console.log("Nuova mail inviata!");
+            const messageObj = new Message({body, sanitizedEmail});
+            transporter.sendMail(messageObj, function(err, info){
+                if(err){
+                    res.json({ success: false, msg: 'Errore nell\'invio della mail' });
+                    console.log("Errore nell'invio di una mail!");
+                    console.error(err);
+                } else {
+                    res.json({ success: true, msg: 'Captcha passed' });
+                    console.log("Nuova mail inviata!");
+                }
+            });
         }
     });
 }
@@ -125,10 +130,7 @@ app.post("/contact", async (req, res) => {
     if (body.success !== undefined && !body.success)
     return res.status(401).json({ success: false, msg: 'Verifica del CAPTCHA fallita' });
 
-    // If successful
-    res.json({ success: true, msg: 'Captcha passed' });
-
-    sendMail(req.body);
+    sendMail(req.body, res);
 });
 
 const server = app.listen(process.env.PORT, process.env.IP, () => {

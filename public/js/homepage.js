@@ -1,4 +1,4 @@
-let section1=$("#section1"),navbar=$(".navbar");function isInViewport(t){var e=t.offset().top,o=e+t.outerHeight()/2,n=$(window).scrollTop(),i=n+$(window).height();return o>n&&e<i}$(document).on("click",'a[href^="#"]',function(t){t.preventDefault(),$("html, body").stop().animate({scrollTop:$($(this).attr("href")).offset().top},800,"swing")}),$(document).on("resize scroll",function(t){isInViewport(section1)&&navbar.is(":visible")?navbar.slideUp():!isInViewport(section1)&&navbar.is(":hidden")&&navbar.slideDown(),$(".section").each(function(){if(isInViewport($(this)))return $(".nav-link").removeClass("active"),$(`a[href='#${$(this).attr("id")}']`).addClass("active"),!1})}),$(document).on("scroll",function(){clearTimeout(topScroller),$("#topScroller").fadeOut()});let topScroller=setTimeout(function(){$("#topScroller").fadeIn()},3e3);
+let section1=$("#section1"),navbar=$(".navbar");function isInViewport(t){var e=t.offset().top,o=e+t.outerHeight()/2,n=$(window).scrollTop(),i=n+$(window).height();return o>n&&e<i}$(document).on("click",'a[href^="#"]',function(t){t.preventDefault(),$("html, body").stop().animate({scrollTop:$($(this).attr("href")).offset().top},800,"swing")}),$(document).on("resize scroll",function(t){isInViewport(section1)&&navbar.is(":visible")?navbar.slideUp():!isInViewport(section1)&&navbar.is(":hidden")&&navbar.slideDown(),$(".section").each(function(){if(isInViewport($(this)))return $(".nav-link").removeClass("active"),$(`a[href='#${$(this).attr("id")}']`).addClass("active"),!1})}),$(document).on("scroll",function(){clearTimeout(topScroller),$("#topScroller").fadeOut()});let topScroller=setTimeout(function(){$("#topScroller").fadeIn()},5e3);
 
 
 particlesJS('particles-js',
@@ -132,7 +132,7 @@ new simpleParallax(textureImg);
 // Timer for reminder
 setTimeout(function(){
     $("#header-reminder").fadeIn("slow");
-}, 3500);
+}, 5500);
 
 $(document).ready(function(){
     $(".animsition").animsition({
@@ -210,14 +210,13 @@ $("#emailForm").submit(function(e){
             } else if(r.responseJSON.msg == "Verifica del CAPTCHA fallita"){
                 $("#error").show().text(r.responseJSON.msg + ", riprova");
             } else {
-                $("#error").show().text("Si è verificato un errore nell'invio della richiesta, si prega di inviare una mail");
-                console.log(r.responseJSON.msg);
+                $("#error").show().text("Si è verificato un errore nell'invio della richiesta, si prega di inviare una mail\n<span style=\"font-size: 0.9rem\">Errore: " + r.responseJSON.msg);
             }
         },
         success: function(){
             formBtn.remove();
             let height = $("#section6-subdiv").height();
-            $("#section6-subdiv").html(`<h1>Grazie per avermi contattato!</h1><p style="margin-bottom: ${height / 2}px;">Risponderò più presto alla tua mail.</p>`);
+            $("#section6-subdiv").html(`<h1>Grazie per avermi contattato!</h1><p style="margin-bottom: ${height / 2}px;">Risponderò al più presto alla tua mail.</p>`);
         }
     }); 
     return false; 
