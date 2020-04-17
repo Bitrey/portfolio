@@ -215,8 +215,8 @@ $("#emailForm").submit(function(e){
         },
         success: function(){
             formBtn.remove();
-            let height = $("#section6-subdiv").height();
-            $("#section6-subdiv").html(`<h1>Grazie per avermi contattato!</h1><p style="margin-bottom: ${height / 2}px;">Risponderò al più presto alla tua mail.</p>`);
+            let height = $("#section7-subdiv").height();
+            $("#section7-subdiv").html(`<h1>Grazie per avermi contattato!</h1><p style="margin-bottom: ${height / 2}px;">Risponderò al più presto alla tua mail.</p>`);
         }
     }); 
     return false; 
