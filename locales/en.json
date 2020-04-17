@@ -1,0 +1,103 @@
+{
+    "TITLE": "Bitrey Web Development",
+    "DESCRIPTION": "I'm a full-stack web developer. I handle every part of a website, from design to code, using the latest techologies and techniques, making it unique and suitable for all devices.",
+    "SECTION1": {
+        "HEADER": "Introduction",
+        "HELLO": "Hi, I'm Alessandro, and I build websites.",
+        "REMINDER": "Did you know? 93% of buying decisions start with an internet search"
+    },
+    "SECTION2": {
+        "HEADER": "What I do",
+        "WHAT_I_DO": "What I do",
+        "FULL_STACK": "I'm a full-stack web developer based in Modena.",
+        "FULL_WEBSITE": "I handle every part of a website, from design to code, using the latest techologies and techniques, making it unique and suitable for all devices.",
+        "LANGUAGES_I_SPEAK": "Languages I speak",
+        "TOOLS_I_USE": "Some of the tools I use",
+        "MODULES_I_USE": "Some of the modules I use"
+    },
+    "SECTION3": {
+        "HEADER": "What I aim at",
+        "WHAT_I_AIM_AT": "What I aim at",
+        "RESPONSIVE": {
+            "TITLE": "Responsive design",
+            "TEXT1": "In 6 years, mobile web traffic jumped from 16% to over 50%.",
+            "TEXT2": "Before creating a user interface, I always think about how to make it suitable for all devices."
+        },
+        "FAST": {
+            "TITLE": "Fast loading times",
+            "TEXT1": "Over half of the websites that take longer than 3 seconds to load are immediately closed.",
+            "TEXT2": "That's what Google found out, which is the reason why it considers speed as the most important factor of every website."
+        },
+        "INTERFACES": {
+            "TITLE": "Simple and intuitive UI",
+            "TEXT1": "Webpages without enough whitespace may seem disorienting.",
+            "TEXT2": "In the last few years we shifted to simple and immediate user interfaces.",
+            "TEXT3": "I always try to create attractive and intuitive webpages to make visitors feel them easy-to-use."
+        }
+    },
+    "SECTION4": {
+        "HEADER": "Cutting edge technology",
+        "CUTTING_EDGE": "Cutting edge technology",
+        "ALWAYS_UPDATED": "The demands and needs of websites change every year: you can't fall behind in this field.",
+        "LATEST_TECH": "For this reason I use the latest technologies, always keeping up to date."
+    },
+    "SECTION5": {
+        "HEADER": "Projects",
+        "PROJECTS": "Projects",
+        "SOME_PROJECTS": "Here are some of my projects",
+        "OPEN": "Open",
+        "CORONAVIRUS_CHARTS": "Tool to visualize the last data on COVID-19 of every nation (or the entire world) on a chart.",
+        "BITREY_CLASSROOM": "Platform for schools to share documents, chat with classmates, post things and more...",
+        "DUBITO_ONLINE": "Online multiplayer version of \"Dubito\" card game."
+    },
+    "SECTION6": {
+        "HEADER": "Annual plan",
+        "ANNUAL_PLAN": "Annual plan",
+        "SUBHEADER1": "If you're an expert at hosting and maintaing websites, I can give you all the files so that you can do what you want with them.",
+        "SUBHEADER2": "Else, you can take advantage of the convenient yearly plan, which includes:",
+        "HOSTING": {
+            "TITLE": "Website hosting",
+            "TEXT1": "Your website needs to be on a fast, powerful server which must be on at all times.",
+            "TEXT2": "I'll install your website on a virtual private server of mine."
+        },
+        "DOMAIN": {
+            "TITLE": "Internet domain",
+            "TEXT1": "If you want your website to be reachable by an address (like",
+            "TEXT2": "www.yourcompany.com",
+            "TEXT3": "you have to register and always renew an internet domain."
+        },
+        "EMAIL": {
+            "TITLE": "Email address",
+            "TEXT1": "You will also have a mailbox associated with your domain (like",
+            "TEXT2": "info@yourcompany.com"
+        },
+        "SSL": {
+            "TITLE": "Encryption with an SSL certificate",
+            "TEXT1": "See the padlock icon, up there next to the website address?",
+            "TEXT2": "It shows that the website has a valid certificate which makes it secure.",
+            "TEXT3": "With the annual plan, I'll install al SSL certificate to ensure the maximum safety."
+        }
+
+    },
+    "SECTION7": {
+        "HEADER": "Contacts",
+        "INTERESTED": "Interested? Let's talk!",
+        "NAME": "Name",
+        "SURNAME": "Surname",
+        "EMAIL": "Email",
+        "HELLO1": "Hi Alessandro,",
+        "HELLO2": "I'd like to ask you something...",
+        "SEND": "Send",
+        "CONTACT_ALTERNATIVE": "Or else you can contact me on",
+        "CREDITS1": "Squares texture credits:",
+        "CREDITS2": "Send button arrow:"
+    },
+    "CONTACT": {
+        "SOLVE_CAPTCHA": "Please solve the CAPTCHA",
+        "FAILED_CAPTCHA": "CAPTCHA verification failed",
+        "ERROR_DATABASE": "Error while saving to database",
+        "ERROR_EMAIL": "Error while sending the email",
+        "THANK_YOU": "Thank you for contacting me!",
+        "REPLY_SOON": "I'll reply to your email as soon as possible."
+    }
+}

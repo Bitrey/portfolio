@@ -1,0 +1,103 @@
+{
+    "TITLE": "Bitrey Realizzazione Siti Web",
+    "DESCRIPTION": "Sono un programmatore web full-stack. Mi occupo di ogni parte del sito, dal design al codice, utilizzando le ultime tecnologie e tecniche, rendendolo unico e adatto a tutti i dispositivi.",
+    "SECTION1": {
+        "HEADER": "Introduzione",
+        "HELLO": "Ciao, sono Alessandro, e sviluppo siti web.",
+        "REMINDER": "Lo sapevi? Il 93% delle decisioni di acquisto inizia con una ricerca su Internet"
+    },
+    "SECTION2": {
+        "HEADER": "Di cosa mi occupo",
+        "WHAT_I_DO": "Di cosa mi occupo",
+        "FULL_STACK": "Sono un programmatore web full-stack di Modena.",
+        "FULL_WEBSITE": "Mi occupo di ogni parte del sito, dal design al codice, utilizzando le ultime tecnologie e tecniche, rendendolo unico e adatto a tutti i dispositivi.",
+        "LANGUAGES_I_SPEAK": "Lingue che parlo",
+        "TOOLS_I_USE": "Alcuni strumenti che uso",
+        "MODULES_I_USE": "Alcuni dei moduli che uso"
+    },
+    "SECTION3": {
+        "HEADER": "Su cosa punto",
+        "WHAT_I_AIM_AT": "Su cosa punto",
+        "RESPONSIVE": {
+            "TITLE": "Responsive design",
+            "TEXT1": "In 6 anni, il traffico web da telefono è passato dal 16% a oltre il 50%.",
+            "TEXT2": "Prima di creare un'interfaccia, penso sempre a come adattarla per tutti i dispositivi."
+        },
+        "FAST": {
+            "TITLE": "Pagine veloci",
+            "TEXT1": "Oltre la metà dei siti che impiegano più di 3 secondi a caricarsi vengono immediatamente chiusi.",
+            "TEXT2": "È ciò che ha scoperto Google, motivo per il quale valuta la velocità come il criterio più importante di ogni sito."
+        },
+        "INTERFACES": {
+            "TITLE": "Interfacce semplici e intuitive",
+            "TEXT1": "Le pagine web senza sufficiente spazio bianco possono sembrare disordinate.",
+            "TEXT2": "Negli ultimi anni si è passati a favorire design semplici e immediati.",
+            "TEXT3": "Mi impegno sempre a creare una pagina web curata e intuitiva pur rimanendo nell'essenziale."
+        }
+    },
+    "SECTION4": {
+        "HEADER": "Sempre all'avanguardia",
+        "CUTTING_EDGE": "Sempre all'avanguardia",
+        "ALWAYS_UPDATED": "Le richieste e le necessità dei siti web cambiano di anno in anno: in questo campo non si può restare indietro.",
+        "LATEST_TECH": "Per questo utilizzo le ultimissime tecnologie, restando sempre aggiornato."
+    },
+    "SECTION5": {
+        "HEADER": "Progetti",
+        "PROJECTS": "Progetti",
+        "SOME_PROJECTS": "Ecco alcuni dei miei progetti",
+        "OPEN": "Apri",
+        "CORONAVIRUS_CHARTS": "Strumento per visualizzare i dati del COVID-19 di ogni nazione (o di tutto il mondo) su un grafico.",
+        "BITREY_CLASSROOM": "Piattaforma scolastica per condividere materiale, chattare con i compagni, postare e altro ancora.",
+        "DUBITO_ONLINE": "Versione online multiplayer del gioco di carte \"Dubito\"."
+    },
+    "SECTION6": {
+        "HEADER": "Piano annuale",
+        "ANNUAL_PLAN": "Piano annuale",
+        "SUBHEADER1": "Se sei esperto nell'hosting e manutenzione di siti web, posso consegnarti tutti i file in modo che te li puoi gestire come vuoi.",
+        "SUBHEADER2": "Altrimenti puoi usufruire del conveniente piano annuale, che include:",
+        "HOSTING": {
+            "TITLE": "Hosting del sito",
+            "TEXT1": "Per essere online, il sito ha bisogno di essere su un server veloce, potente e sempre acceso.",
+            "TEXT2": "Installerò il tuo sito in un server virtuale Linux gestito da me."
+        },
+        "DOMAIN": {
+            "TITLE": "Dominio internet",
+            "TEXT1": "Se vuoi che il tuo sito sia raggiungibile da un indirizzo (come",
+            "TEXT2": "www.latuaazienda.it",
+            "TEXT3": "bisogna registrare e tenere rinnovato un dominio internet."
+        },
+        "EMAIL": {
+            "TITLE": "Indirizzo Email",
+            "TEXT1": "Avrai anche una casella di posta elettronica associata al tuo dominio (come",
+            "TEXT2": "info@latuaazienda.it"
+        },
+        "SSL": {
+            "TITLE": "Criptazione con certificato SSL",
+            "TEXT1": "Vedi il lucchetto in alto, di fianco all'indirizzo del sito?",
+            "TEXT2": "Esso mostra che il sito dispone di un certificato che lo rende sicuro.",
+            "TEXT3": "Con il piano annuale installerò un certificato SSL in modo da garantire la massima sicurezza."
+        }
+
+    },
+    "SECTION7": {
+        "HEADER": "Contatti",
+        "INTERESTED": "Interessato? Parliamo!",
+        "NAME": "Nome",
+        "SURNAME": "Cognome",
+        "EMAIL": "Email",
+        "HELLO1": "Ciao Alessandro,",
+        "HELLO2": "vorrei chiederti una cosa...",
+        "SEND": "Invia",
+        "CONTACT_ALTERNATIVE": "Oppure puoi contattarmi su",
+        "CREDITS1": "Attributi immagine riquadri:",
+        "CREDITS2": "Freccia tasto invio:"
+    },
+    "CONTACT": {
+        "SOLVE_CAPTCHA": "Risolvi il CAPTCHA per continuare",
+        "FAILED_CAPTCHA": "Verifica del CAPTCHA fallita",
+        "ERROR_DATABASE": "Errore nel salvataggio nel database",
+        "ERROR_EMAIL": "Errore nell'invio della mail",
+        "THANK_YOU": "Grazie per avermi contattato!",
+        "REPLY_SOON": "Risponderò al più presto alla tua mail."
+    }
+}

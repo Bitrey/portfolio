@@ -7,7 +7,16 @@ const nodemailer = require("nodemailer");
 const sanitizeHtml = require('sanitize-html');
 const fetch = require('node-fetch');
 const { stringify } = require('querystring');
+const createLocaleMiddleware = require ('express-locale');
+const cookieParser = require("cookie-parser");
+const text = {
+    it: require("./locales/it.json"),
+    en: require("./locales/en.json")
+}
 require("dotenv").config();
+
+app.use(cookieParser(process.env.COOKIE_SECRET));
+app.use(createLocaleMiddleware());
 
 // MONGOOSE SETUP
 mongoose.set('useNewUrlParser', true);
@@ -59,7 +68,7 @@ class Message {
     }
 }
 
-const sendMail = (body, res) => {
+const sendMail = (body, res, contactText) => {
     const sanitizedEmail = sanitizeHtml(body.text, {
         allowedTags: [ 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol', 'em', 'u',
             'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'del', 'br', 'div', 's',
@@ -75,17 +84,17 @@ const sendMail = (body, res) => {
     newProject.save(function(err){
         if(err){
             // If successful
-            res.json({ success: false, msg: 'Errore nel salvataggio nel database' });
+            res.json({ success: false, reason: "ERROR_DATABASE",  msg: contactText.ERROR_DATABASE });
             console.error(err);
         } else {
             const messageObj = new Message({body, sanitizedEmail});
             transporter.sendMail(messageObj, function(err, info){
                 if(err){
-                    res.json({ success: false, msg: 'Errore nell\'invio della mail' });
+                    res.json({ success: false, reason: "ERROR_EMAIL",  msg: contactText.ERROR_EMAIL });
                     console.log("Errore nell'invio di una mail!");
                     console.error(err);
                 } else {
-                    res.json({ success: true, msg: 'Captcha passed' });
+                    res.json({ success: true });
                     console.log("Nuova mail inviata!");
                 }
             });
@@ -103,13 +112,43 @@ app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
-    res.render("index");
-})
+    let lang;
+    if(req.query.lang && text[req.query.lang]){
+        lang = req.query.lang;
+    } else if(req.cookies.lang && text[req.cookies.lang]){
+        lang = req.cookies.lang;
+    } else if(req.locale && req.locale.language && text[req.locale.language]){
+        lang = req.locale.language;
+    } else {
+        lang = "en"
+    }
+    res.cookie("lang", lang);
+    res.redirect(`/${lang}`);
+});
+
+app.get("/it", (req, res) => {
+    res.cookie("lang", "it");
+    res.render("index", { text: text.it });
+});
+
+app.get("/en", (req, res) => {
+    res.cookie("lang", "en");
+    res.render("index", { text: text.en });
+});
 
 app.post("/contact", async (req, res) => {
+
+    let lang;
+    if(req.cookies.lang && text[req.cookies.lang]){
+        lang = req.cookies.lang;
+    } else {
+        lang = "en";
+    }
+
+    const contactText = text[lang].CONTACT;
     
     if(!req.body.captcha){
-        return res.status(401).json({ success: false, msg: 'Risolvi il CAPTCHA per continuare' });
+        return res.status(401).json({ success: false, reason: "SOLVE_CAPTCHA",  msg: contactText.SOLVE_CAPTCHA });
     }
 
     // Secret key
@@ -128,9 +167,9 @@ app.post("/contact", async (req, res) => {
 
     // If not successful
     if (body.success !== undefined && !body.success)
-    return res.status(401).json({ success: false, msg: 'Verifica del CAPTCHA fallita' });
+    return res.status(401).json({ success: false, reason: "FAILED_CAPTCHA", msg: contactText.FAILED_CAPTCHA });
 
-    sendMail(req.body, res);
+    sendMail(req.body, res, contactText);
 });
 
 const server = app.listen(process.env.PORT, process.env.IP, () => {

@@ -6,9 +6,9 @@
         <div class="container text-center main-header mx-auto">
             <img src="/img/bitrey-logo-text.png" alt="Bitrey Logo Text" class="text-logo">
             <h1 class="animate-typing" data-type-speed="70" data-cursor-speed="800" data-type-delay="1500">
-                Ciao, sono Alessandro, e sviluppo siti web.
+                <%= text.SECTION1.HELLO %>
             </h1>
-            <p id="header-reminder" style="display: none;">Lo sapevi? Il 93% delle decisioni di acquisto inizia con una ricerca su Internet</p>
+            <p id="header-reminder" style="display: none;"><%= text.SECTION1.REMINDER %></p>
             <a id="topScroller" style="display: none;" href="#section2"><span></span><span></span><span></span></a>
         </div>
 
@@ -22,19 +22,19 @@
         <!-- particles.js container -->
 
         <div class="container text-center main-header mx-auto" style="z-index: 2;">
-            <h1>Di cosa mi occupo</h1>
-            <div class="main-subheader">Sono un programmatore web full-stack di Modena.
-                <br>Mi occupo di ogni parte del sito, dal design al codice, utilizzando le ultime tecnologie e tecniche, rendendolo unico e adatto a tutti i dispositivi.
+            <h1><%= text.SECTION2.WHAT_I_DO %></h1>
+            <div class="main-subheader"><%= text.SECTION2.FULL_STACK %>
+                <br><%= text.SECTION2.FULL_WEBSITE %>
                 <div class="row justify-content-around mt-5">
                     <div class="col-6 col-lg-4">
                         <img src="/img/front-end.svg" alt="Frontend" class="section-img">
                         <h5 class="section-title">Frontend</h5>
                         <p>
-                            <span class="purple-title">Lingue che parlo</span>
+                            <span class="purple-title"><%= text.SECTION2.LANGUAGES_I_SPEAK %></span>
                             <br>HTML, CSS, JavaScript
                         </p>
                         <p>
-                            <span class="purple-title">Alcuni strumenti che uso</span>
+                            <span class="purple-title"><%= text.SECTION2.TOOLS_I_USE %></span>
                             <br>Visual Studio Code
                             <br>Figma
                             <br>Bootstrap
@@ -50,7 +50,7 @@
                             <br>MongoDB, Express, Node.js
                         </p>
                         <p>
-                            <span class="purple-title">Alcuni dei moduli che uso</span>
+                            <span class="purple-title"><%= text.SECTION2.MODULES_I_USE %></span>
                             <br>Passport.io
                             <br>Google oAuth 2.0
                             <br>Mongoose
@@ -67,32 +67,32 @@
     </div>
     <div class="section" id="section3">
         <div class="container text-center main-header mx-auto">
-            <h1>Su cosa punto</h1>
+            <h1><%= text.SECTION3.WHAT_I_AIM_AT %></h1>
             <div class="main-subheader">
                 <div class="row justify-content-around mt-5">
                     <div class="col-6 col-lg-4">
                         <img src="/img/responsive.svg" alt="Responsive" class="section-img">
                         <p>
-                            <span class="purple-title">Responsive design</span>
-                                <br>In 6 anni, il traffico web da telefono è passato dal 16% a oltre il 50%.
-                                <br>Prima di creare un'interfaccia, penso sempre a come adattarla per tutti i dispositivi.
+                            <span class="purple-title"><%= text.SECTION3.RESPONSIVE.TITLE %></span>
+                                <br><%= text.SECTION3.RESPONSIVE.TEXT1 %>
+                                <br><%= text.SECTION3.RESPONSIVE.TEXT2 %>
                         </p>
                     </div>
                     <div class="col-6 col-lg-4">
                         <img src="/img/speed.svg" alt="Speed" class="section-img">
                         <p>
-                            <span class="purple-title">Pagine veloci</span>
-                            <br>Oltre la metà dei siti che impiegano più di 3 secondi a caricarsi vengono immediatamente chiusi.
-                            <br>È ciò che ha scoperto Google, motivo per il quale valuta la velocità come il criterio più importante di ogni sito.
+                            <span class="purple-title"><%= text.SECTION3.FAST.TITLE %></span>
+                            <br><%= text.SECTION3.FAST.TEXT1 %>
+                            <br><%= text.SECTION3.FAST.TEXT2 %>
                         </p>
                     </div>
                     <div class="col-6 col-lg-4">
                         <img src="/img/simplicity.svg" alt="Simplicity" class="section-img">
                         <p>
-                            <span class="purple-title">Interfacce semplici e intuitive</span>
-                            <br>Le pagine web senza sufficiente spazio bianco possono sembrare disordinate.
-                            <br>Negli ultimi anni si è passati a favorire design semplici e immediati.
-                            <br>Mi impegno sempre a creare una pagina web curata e intuitiva pur rimanendo nell'essenziale.
+                            <span class="purple-title"><%= text.SECTION3.INTERFACES.TITLE %></span>
+                            <br><%= text.SECTION3.INTERFACES.TEXT1 %>
+                            <br><%= text.SECTION3.INTERFACES.TEXT2 %>
+                            <br><%= text.SECTION3.INTERFACES.TEXT3 %>
                         </p>
                     </div>
                 </div>
@@ -101,10 +101,10 @@
     </div>
     <div class="section" id="section4">
         <div class="container text-center main-header mx-auto">
-            <h1>Sempre all'avanguardia</h1>
+            <h1><%= text.SECTION4.CUTTING_EDGE %></h1>
             <div class="main-subheader">
-                Le richieste e le necessità dei siti web cambiano di anno in anno: in questo campo non si può restare indietro.
-                <br>Per questo utilizzo le ultimissime tecnologie, restando sempre aggiornato.
+                <%= text.SECTION4.ALWAYS_UPDATED %>
+                <br><%= text.SECTION4.LATEST_TECH %>
                 <div class="row justify-content-around mt-lg-2">
                     <div class="col-6 col-lg-4">
                         <img src="/img/flashhtml.svg" alt="Flash HTML" class="img-fluid">
@@ -134,9 +134,9 @@
             <div class="cube"></div>
 
         <div class="container text-center main-header mx-auto">
-            <h1>Progetti</h1>
+            <h1><%= text.SECTION5.PROJECTS %></h1>
             <div class="main-subheader">
-                Ecco alcuni dei miei progetti
+                <%= text.SECTION5.SOME_PROJECTS %>
             </div>
 
             <div class="row mt-5 justify-content-center">
@@ -147,8 +147,8 @@
                             <img class="card-img-top" src="/img/coronavirus-charts.png" alt="Coronavirus Charts">
                             <div class="card-body">
                                 <h5 class="card-title">Coronavirus Charts</h5>
-                                <p class="card-text">Strumento per visualizzare i dati del COVID-19 di ogni nazione (o di tutto il mondo) su un grafico.</p>
-                                <span class="btn btn-primary">Apri</span>
+                                <p class="card-text"><%= text.SECTION5.CORONAVIRUS_CHARTS %></p>
+                                <span class="btn btn-primary"><%= text.SECTION5.OPEN %></span>
                             </div>
                         </a>
                     </div>
@@ -159,8 +159,8 @@
                             <img class="card-img-top" src="/img/bitrey-classroom.png" alt="Bitrey Classroom">
                             <div class="card-body">
                                 <h5 class="card-title">Bitrey Classroom</h5>
-                                <p class="card-text">Piattaforma scolastica per condividere materiale, chattare con i compagni, postare e altro ancora.</p>
-                                <span class="btn btn-primary">Apri</span>
+                                <p class="card-text"><%= text.SECTION5.BITREY_CLASSROOM %></p>
+                                <span class="btn btn-primary"><%= text.SECTION5.OPEN %></span>
                             </div>
                         </a>
                     </div>
@@ -171,8 +171,8 @@
                             <img class="card-img-top" src="/img/dubito-online.jpg" alt="Dubito Online">
                             <div class="card-body">
                                 <h5 class="card-title">Dubito Online</h5>
-                                <p class="card-text">Versione online multiplayer del gioco di carte "Dubito".</p>
-                                <span class="btn btn-primary">Apri</span>
+                                <p class="card-text"><%= text.SECTION5.DUBITO_ONLINE %></p>
+                                <span class="btn btn-primary"><%= text.SECTION5.OPEN %></span>
                             </div>
                         </a>
                     </div>
@@ -183,73 +183,73 @@
     </div>
     <div class="section" id="section6">
         <div class="container text-center main-header mx-auto">
-            <h1>Piano annuale</h1>
+            <h1><%= text.SECTION6.ANNUAL_PLAN %></h1>
             <div class="main-subheader">
-                Se sei esperto nell'hosting e manutenzione di siti web, posso consegnarti tutti i file in modo che te li puoi gestire come vuoi.
-                <br>Altrimenti puoi usufruire del conveniente piano annuale, che include:
+                <%= text.SECTION6.SUBHEADER1 %>
+                <br><%= text.SECTION6.SUBHEADER2 %>
             </div>
             <div class="row justify-content-around mt-5">
                 <div class="col-6 col-lg-3">
                     <img src="/img/server.svg" alt="Hosting" class="section-img">
                     <p>
-                        <span class="purple-title">Hosting del sito</span>
-                        <br>Per essere online, il sito ha bisogno di essere su un server veloce, potente e sempre acceso.
-                        <br>Installerò il tuo sito in un server virtuale Linux gestito da me.
+                        <span class="purple-title"><%= text.SECTION6.HOSTING.TITLE %></span>
+                        <br><%= text.SECTION6.HOSTING.TEXT1 %>
+                        <br><%= text.SECTION6.HOSTING.TEXT2 %>
                     </p>
                 </div>
                 <div class="col-6 col-lg-3">
                     <img src="/img/domain.svg" alt="Domain" class="section-img">
                     <p>
-                        <span class="purple-title">Dominio internet</span>
-                        <br>Se vuoi che il tuo sito sia raggiungibile da un indirizzo (come
-                        <span style="font-style: italic;">www.latuaazienda.it</span>)
-                        bisogna registrare e tenere rinnovato un dominio internet.
+                        <span class="purple-title"><%= text.SECTION6.DOMAIN.TITLE %></span>
+                        <br><%= text.SECTION6.DOMAIN.TEXT1 %>
+                        <span style="font-style: italic;"><%= text.SECTION6.DOMAIN.TEXT2 %></span>)
+                        <%= text.SECTION6.DOMAIN.TEXT3 %>
                     </p>
                 </div>
                 <div class="col-6 col-lg-3">
                     <img src="/img/email.svg" alt="Email" class="section-img">
                     <p>
-                        <span class="purple-title">Indirizzo Email</span>
-                        <br>Avrai anche una casella di posta elettronica associata al tuo dominio (come
-                        <span style="font-style: italic;">info@latuaazienda.it</span>).
+                        <span class="purple-title"><%= text.SECTION6.EMAIL.TITLE %></span>
+                        <br><%= text.SECTION6.EMAIL.TEXT1 %>
+                        <span style="font-style: italic;"><%= text.SECTION6.EMAIL.TEXT2 %></span>).
                     </p>
                 </div>
                 <div class="col-6 col-lg-3">
                     <img src="/img/ssl.svg" alt="SSL" class="section-img">
                     <p>
-                        <span class="purple-title">Criptazione con certificato SSL</span>
-                        <br>Vedi il lucchetto in alto, di fianco all'indirizzo del sito?
-                        <br>Esso mostra che il sito dispone di un certificato che lo rende sicuro.
-                        <br>Con il piano annuale installerò un certificato SSL in modo da garantire la massima sicurezza.
+                        <span class="purple-title"><%= text.SECTION6.SSL.TITLE %></span>
+                        <br><%= text.SECTION6.SSL.TEXT1 %>
+                        <br><%= text.SECTION6.SSL.TEXT2 %>
+                        <br><%= text.SECTION6.SSL.TEXT3 %>
                     </p>
                 </div>
             </div>
         </div>
     </div>
     <div class="section" id="section7">
-        <div class="container text-center main-header mx-auto" id="section6-subdiv">
-            <h1>Interessato? Parliamo!</h1>
+        <div class="container text-center main-header mx-auto" id="section7-subdiv">
+            <h1><%= text.SECTION7.INTERESTED %></h1>
             <div class="main-subheader">
                 <form class="mt-3 mb-5" id="emailForm">
                     <div class="row justify-content-center">
                         <div class="col-6 col-lg-4">
-                            <label for="name" class="mb-0 mb-md-2">Nome</label>
-                            <input type="text" class="form-control" id="name" placeholder="Nome" name="name" required>
+                            <label for="name" class="mb-0 mb-md-2"><%= text.SECTION7.NAME %></label>
+                            <input type="text" class="form-control" id="name" autocomplete="given-name" placeholder="<%= text.SECTION7.NAME %>" name="name" required>
                         </div>
                         <div class="col-6 col-lg-4">
-                            <label for="surname" class="mb-0 mb-md-2">Cognome</label>
-                            <input type="text" class="form-control" id="surname" placeholder="Cognome" name="surname" required>
+                            <label for="surname" class="mb-0 mb-md-2"><%= text.SECTION7.SURNAME %></label>
+                            <input type="text" class="form-control" id="surname" autocomplete="family-name" placeholder="<%= text.SECTION7.SURNAME %>" name="surname" required>
                         </div>
                         <div class="col-6 col-lg-4">
-                            <label for="email" class="mb-0 mb-md-2">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="latua@email.com" name="email" required>
+                            <label for="email" class="mb-0 mb-md-2"><%= text.SECTION7.EMAIL %></label>
+                            <input type="email" class="form-control" id="email" autocomplete="email" placeholder="<%= text.SECTION7.EMAIL %>" name="email" required>
                         </div>
                     </div>
                     <div class="row pt-3">
                         <div class="col-12" id="editor-col">
                             <div id="editor">
-                              <p>Ciao Alessandro,</p>
-                              <p>vorrei chiederti una cosa...</p>
+                              <p><%= text.SECTION7.HELLO1 %></p>
+                              <p><%= text.SECTION7.HELLO2 %></p>
                               <p><br></p>
                             </div>
                         </div>
@@ -260,19 +260,28 @@
                         <br/>
                     </div>
                     <div style="position: relative; height: 20px;">
-                        <button id="sendForm" type="submit">Invia</button>
+                        <button id="sendForm" type="submit"><%= text.SECTION7.SEND %></button>
                     </div>
                     <p id="error" style="display: none;"></p>
                 </form>
-                <p>Oppure puoi contattarmi su <a href="mailto:info@bitrey.it" style="color: #752b8c;">info@bitrey.it</a></p>
+                <p><%= text.SECTION7.CONTACT_ALTERNATIVE %> <a href="mailto:info@bitrey.it" style="color: #752b8c;">info@bitrey.it</a></p>
             </div>
         </div>
         <div class="text-center py-2 mt-3" style="font-size: 0.8rem;">
-            Attributi immagine riquadri: 
+            <%= text.SECTION7.CREDITS1 %>
             <a style="color: #212529;" target="_blank" href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline - www.freepik.com</a>
-            <br>Freccia tasto invio: <a style="color: #212529;" target="_blank" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            <br><%= text.SECTION7.CREDITS2 %> <a style="color: #212529;" target="_blank" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+        </div>
+        <div class="mt-3 text-center">
+            <a href="/?lang=en" class="no-link">
+                <img src="/img/en.svg" alt="English" style="max-height: 2rem; margin-right: 0.3rem;">
+            </a>
+            <a href="/?lang=it" class="no-link">
+                <img src="/img/it.svg" alt="Italiano" style="max-height: 2rem; margin-left: 0.3rem;">
+            </a>
         </div>
     </div>
+    <p style="display: none;" id="contactText"><%= JSON.stringify(text.CONTACT) %></p>
 </main>
 
 <%- include ('./partials/footer') %>
