@@ -35,10 +35,10 @@
                         </p>
                         <p>
                             <span class="purple-title"><%= text.SECTION2.TOOLS_I_USE %></span>
-                            <br>Visual Studio Code
-                            <br>Figma
+                            <br>React
+                            <br>Redux
+                            <br>VS Code
                             <br>Bootstrap
-                            <br>Codepen
                             <br>jQuery
                         </p>
                     </div>
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div id="particles-js"></div>
 
     </div>
@@ -74,8 +74,8 @@
                         <img src="/img/responsive.svg" alt="Responsive" class="section-img">
                         <p>
                             <span class="purple-title"><%= text.SECTION3.RESPONSIVE.TITLE %></span>
-                                <br><%= text.SECTION3.RESPONSIVE.TEXT1 %>
-                                <br><%= text.SECTION3.RESPONSIVE.TEXT2 %>
+                            <br><%= text.SECTION3.RESPONSIVE.TEXT1 %>
+                            <br><%= text.SECTION3.RESPONSIVE.TEXT2 %>
                         </p>
                     </div>
                     <div class="col-6 col-lg-4">
@@ -125,13 +125,13 @@
 
     </div>
     <div class="section hero" id="section5">
-        
-            <div class="cube"></div>
-            <div class="cube"></div>
-            <div class="cube"></div>
-            <div class="cube"></div>
-            <div class="cube"></div>
-            <div class="cube"></div>
+
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
+        <div class="cube"></div>
 
         <div class="container text-center main-header mx-auto">
             <h1><%= text.SECTION5.PROJECTS %></h1>
@@ -234,43 +234,50 @@
                     <div class="row justify-content-center">
                         <div class="col-6 col-lg-4">
                             <label for="name" class="mb-0 mb-md-2"><%= text.SECTION7.NAME %></label>
-                            <input type="text" class="form-control" id="name" autocomplete="given-name" placeholder="<%= text.SECTION7.NAME %>" name="name" required>
+                            <input type="text" class="form-control" id="name" autocomplete="given-name"
+                                placeholder="<%= text.SECTION7.NAME %>" name="name" required>
                         </div>
                         <div class="col-6 col-lg-4">
                             <label for="surname" class="mb-0 mb-md-2"><%= text.SECTION7.SURNAME %></label>
-                            <input type="text" class="form-control" id="surname" autocomplete="family-name" placeholder="<%= text.SECTION7.SURNAME %>" name="surname" required>
+                            <input type="text" class="form-control" id="surname" autocomplete="family-name"
+                                placeholder="<%= text.SECTION7.SURNAME %>" name="surname" required>
                         </div>
                         <div class="col-6 col-lg-4">
                             <label for="email" class="mb-0 mb-md-2"><%= text.SECTION7.EMAIL %></label>
-                            <input type="email" class="form-control" id="email" autocomplete="email" placeholder="<%= text.SECTION7.EMAIL %>" name="email" required>
+                            <input type="email" class="form-control" id="email" autocomplete="email"
+                                placeholder="<%= text.SECTION7.EMAIL %>" name="email" required>
                         </div>
                     </div>
                     <div class="row pt-3">
                         <div class="col-12" id="editor-col">
                             <div id="editor">
-                              <p><%= text.SECTION7.HELLO1 %></p>
-                              <p><%= text.SECTION7.HELLO2 %></p>
-                              <p><br></p>
+                                <p><%= text.SECTION7.HELLO1 %></p>
+                                <p><%= text.SECTION7.HELLO2 %></p>
+                                <p><br></p>
                             </div>
                         </div>
                         <input type="hidden" id="bodyText" name="text" style="display: none;">
                     </div>
                     <div style="display: block; margin-top: 80px;" class="mx-auto text-center">
                         <div class="g-recaptcha" data-sitekey="6LdL6ekUAAAAAG-HmaWXFj8H6l29jsUGVv33rIv1"></div>
-                        <br/>
+                        <br />
                     </div>
                     <div style="position: relative; height: 20px;">
                         <button id="sendForm" type="submit"><%= text.SECTION7.SEND %></button>
                     </div>
                     <p id="error" style="display: none;"></p>
                 </form>
-                <p><%= text.SECTION7.CONTACT_ALTERNATIVE %> <a href="mailto:info@bitrey.it" style="color: #752b8c;">info@bitrey.it</a></p>
+                <p><%= text.SECTION7.CONTACT_ALTERNATIVE %> <a href="mailto:info@bitrey.it"
+                        style="color: #752b8c;">info@bitrey.it</a></p>
             </div>
         </div>
         <div class="text-center py-2 mt-3" style="font-size: 0.8rem;">
             <%= text.SECTION7.CREDITS1 %>
-            <a style="color: #212529;" target="_blank" href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline - www.freepik.com</a>
-            <br><%= text.SECTION7.CREDITS2 %> <a style="color: #212529;" target="_blank" href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            <a style="color: #212529;" target="_blank"
+                href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline -
+                www.freepik.com</a>
+            <br><%= text.SECTION7.CREDITS2 %> <a style="color: #212529;" target="_blank"
+                href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
         </div>
         <div class="mt-3 text-center">
             <a href="/?lang=en" class="no-link">
