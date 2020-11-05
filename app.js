@@ -4,28 +4,38 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const nodemailer = require("nodemailer");
-const sanitizeHtml = require('sanitize-html');
-const fetch = require('node-fetch');
-const { stringify } = require('querystring');
-const createLocaleMiddleware = require ('express-locale');
+const sanitizeHtml = require("sanitize-html");
+const fetch = require("node-fetch");
+const { stringify } = require("querystring");
+const createLocaleMiddleware = require("express-locale");
 const cookieParser = require("cookie-parser");
+const helmet = require("helmet");
+const hsts = require("hsts");
 const text = {
     it: require("./locales/it.json"),
     en: require("./locales/en.json")
-}
+};
 require("dotenv").config();
 
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(createLocaleMiddleware());
 
+app.use(helmet());
+
+app.use(
+    hsts({
+        maxAge: 15552000 // 180 days in seconds
+    })
+);
+
 // MONGOOSE SETUP
-mongoose.set('useNewUrlParser', true);
-mongoose.set('useFindAndModify', false);
-mongoose.set('useCreateIndex', true);
-mongoose.set('useUnifiedTopology', true);
+mongoose.set("useNewUrlParser", true);
+mongoose.set("useFindAndModify", false);
+mongoose.set("useCreateIndex", true);
+mongoose.set("useUnifiedTopology", true);
 
 // CONNECT TO MONGODB
-mongoose.connect(process.env.MONGODB_URI, function(){
+mongoose.connect(process.env.MONGODB_URI, function () {
     console.log("Database connesso!");
 });
 
@@ -46,33 +56,74 @@ let transporter = nodemailer.createTransport({
         pass: process.env.MAIL_PASSWORD
     },
     tls: {
-      rejectUnauthorized: false
+        rejectUnauthorized: false
     }
 });
 
-transporter.verify(function(err, success) {
-    if(err){
-      console.error(err);
+transporter.verify(function (err, success) {
+    if (err) {
+        console.error(err);
     } else {
-      console.log("Email funzionante: " + success);
+        console.log("Email funzionante: " + success);
     }
 });
 
 class Message {
-    constructor(email){
-        this.from = "\"Bitrey.it CONTACT FORM\" info@bitrey.it";
+    constructor(email) {
+        this.from = '"Bitrey.it CONTACT FORM" info@bitrey.it';
         this.to = "alessandro.amella@live.it";
-        this.subject = 'Bitrey.it Contact Form!';
+        this.subject = "Bitrey.it Contact Form!";
         this.html = `<span style="font-size: 1.3rem"><strong>NUOVO CONTATTO DA BITREY.IT!</strong><br><br><strong>Nome:</strong> ${email.body.name}<br><strong>Cognome:</strong> ${email.body.surname}<br><strong>Email:</strong> ${email.body.email}<br><strong>Testo:</strong><br>****************************************</span>${email.sanitizedEmail}<br>****************************************`;
     }
 }
 
 const sendMail = (body, res, contactText) => {
     const sanitizedEmail = sanitizeHtml(body.text, {
-        allowedTags: [ 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol', 'em', 'u',
-            'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'del', 'br', 'div', 's',
-            'table', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre', 'iframe', 'span',
-            'dd', 'dl', , 'dt', 'h1', 'h2', 'img', 'sup', 'sup' ]
+        allowedTags: [
+            "h3",
+            "h4",
+            "h5",
+            "h6",
+            "blockquote",
+            "p",
+            "a",
+            "ul",
+            "ol",
+            "em",
+            "u",
+            "nl",
+            "li",
+            "b",
+            "i",
+            "strong",
+            "em",
+            "strike",
+            "code",
+            "hr",
+            "del",
+            "br",
+            "div",
+            "s",
+            "table",
+            "thead",
+            "caption",
+            "tbody",
+            "tr",
+            "th",
+            "td",
+            "pre",
+            "iframe",
+            "span",
+            "dd",
+            "dl",
+            ,
+            "dt",
+            "h1",
+            "h2",
+            "img",
+            "sup",
+            "sup"
+        ]
     });
     const newProject = new Project({
         name: body.name,
@@ -80,16 +131,24 @@ const sendMail = (body, res, contactText) => {
         email: body.email,
         text: sanitizedEmail
     });
-    newProject.save(function(err){
-        if(err){
+    newProject.save(function (err) {
+        if (err) {
             // If successful
-            res.json({ success: false, reason: "ERROR_DATABASE",  msg: contactText.ERROR_DATABASE });
+            res.json({
+                success: false,
+                reason: "ERROR_DATABASE",
+                msg: contactText.ERROR_DATABASE
+            });
             console.error(err);
         } else {
-            const messageObj = new Message({body, sanitizedEmail});
-            transporter.sendMail(messageObj, function(err, info){
-                if(err){
-                    res.json({ success: false, reason: "ERROR_EMAIL",  msg: contactText.ERROR_EMAIL });
+            const messageObj = new Message({ body, sanitizedEmail });
+            transporter.sendMail(messageObj, function (err, info) {
+                if (err) {
+                    res.json({
+                        success: false,
+                        reason: "ERROR_EMAIL",
+                        msg: contactText.ERROR_EMAIL
+                    });
                     console.log("Errore nell'invio di una mail!");
                     console.error(err);
                 } else {
@@ -99,7 +158,7 @@ const sendMail = (body, res, contactText) => {
             });
         }
     });
-}
+};
 
 app.set("view engine", "ejs");
 
@@ -112,14 +171,14 @@ app.use(express.static(__dirname + "/public"));
 
 app.get("/", (req, res) => {
     let lang;
-    if(req.query.lang && text[req.query.lang]){
+    if (req.query.lang && text[req.query.lang]) {
         lang = req.query.lang;
-    } else if(req.cookies.lang && text[req.cookies.lang]){
+    } else if (req.cookies.lang && text[req.cookies.lang]) {
         lang = req.cookies.lang;
-    } else if(req.locale && req.locale.language && text[req.locale.language]){
+    } else if (req.locale && req.locale.language && text[req.locale.language]) {
         lang = req.locale.language;
     } else {
-        lang = "en"
+        lang = "en";
     }
     res.cookie("lang", lang);
     res.redirect(`/${lang}`);
@@ -136,18 +195,23 @@ app.get("/en", (req, res) => {
 });
 
 app.post("/contact", async (req, res) => {
-
     let lang;
-    if(req.cookies.lang && text[req.cookies.lang]){
+    if (req.cookies.lang && text[req.cookies.lang]) {
         lang = req.cookies.lang;
     } else {
         lang = "en";
     }
 
     const contactText = text[lang].CONTACT;
-    
-    if(!req.body.captcha){
-        return res.status(401).json({ success: false, reason: "SOLVE_CAPTCHA",  msg: contactText.SOLVE_CAPTCHA });
+
+    if (!req.body.captcha) {
+        return res
+            .status(401)
+            .json({
+                success: false,
+                reason: "SOLVE_CAPTCHA",
+                msg: contactText.SOLVE_CAPTCHA
+            });
     }
 
     // Secret key
@@ -166,11 +230,17 @@ app.post("/contact", async (req, res) => {
 
     // If not successful
     if (body.success !== undefined && !body.success)
-    return res.status(401).json({ success: false, reason: "FAILED_CAPTCHA", msg: contactText.FAILED_CAPTCHA });
+        return res
+            .status(401)
+            .json({
+                success: false,
+                reason: "FAILED_CAPTCHA",
+                msg: contactText.FAILED_CAPTCHA
+            });
 
     sendMail(req.body, res, contactText);
 });
 
 const server = app.listen(process.env.PORT, process.env.IP, () => {
     console.log("Server partito!");
-})
+});
