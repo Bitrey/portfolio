@@ -2,60 +2,90 @@
 
 <main class="animsition">
     <div class="section" id="section1">
-
         <div class="container text-center main-header mx-auto">
-            <img loading="lazy" src="/img/bitrey-logo-text.png" alt="Bitrey Logo Text" class="text-logo">
-            <h1 class="animate-typing" data-type-speed="70" data-cursor-speed="800" data-type-delay="1500">
+            <img
+                loading="lazy"
+                src="/img/bitrey-logo-text.png"
+                alt="Bitrey Logo Text"
+                class="text-logo"
+            />
+            <h1
+                class="animate-typing"
+                data-type-speed="70"
+                data-cursor-speed="800"
+                data-type-delay="1500"
+            >
                 <%= text.SECTION1.HELLO %>
             </h1>
-            <p id="header-reminder" style="display: none;"><%= text.SECTION1.REMINDER %></p>
-            <a id="topScroller" style="display: none;" href="#section2"><span></span><span></span><span></span></a>
+            <p id="header-reminder" style="display: none">
+                <%= text.SECTION1.REMINDER %>
+            </p>
+            <a id="topScroller" style="display: none" href="#section2"
+                ><span></span><span></span><span></span
+            ></a>
         </div>
 
         <div id="section1-background">
-            <img loading="lazy" id="section1-background-img" src="/img/background.jpg" alt="Sfondo">
+            <img
+                loading="lazy"
+                id="section1-background-img"
+                src="/img/background.jpg"
+                alt="Sfondo"
+            />
         </div>
-
     </div>
     <div class="section" id="section2">
-
         <!-- particles.js container -->
 
-        <div class="container text-center main-header mx-auto" style="z-index: 2;">
+        <div
+            class="container text-center main-header mx-auto"
+            style="z-index: 2"
+        >
             <h1><%= text.SECTION2.WHAT_I_DO %></h1>
-            <div class="main-subheader"><%= text.SECTION2.FULL_STACK %>
-                <br><%= text.SECTION2.FULL_WEBSITE %>
+            <div class="main-subheader">
+                <%= text.SECTION2.FULL_STACK %> <br /><%=
+                text.SECTION2.FULL_WEBSITE %>
                 <div class="row justify-content-around mt-5">
                     <div class="col-6 col-lg-4">
-                        <img loading="lazy" src="/img/front-end.svg" alt="Frontend" class="section-img">
+                        <img
+                            loading="lazy"
+                            src="/img/front-end.svg"
+                            alt="Frontend"
+                            class="section-img"
+                        />
                         <h5 class="section-title">Frontend</h5>
                         <p>
-                            <span class="purple-title"><%= text.SECTION2.LANGUAGES_I_SPEAK %></span>
-                            <br>HTML, CSS, JavaScript, TypeScript
+                            <span class="purple-title"
+                                ><%= text.SECTION2.LANGUAGES_I_SPEAK %></span
+                            >
+                            <br />HTML, CSS, JavaScript, TypeScript
                         </p>
                         <p>
-                            <span class="purple-title"><%= text.SECTION2.TOOLS_I_USE %></span>
-                            <br>React
-                            <br>Redux
-                            <br>VS Code
-                            <br>Bootstrap
-                            <br>jQuery
+                            <span class="purple-title"
+                                ><%= text.SECTION2.TOOLS_I_USE %></span
+                            >
+                            <br />React <br />Redux <br />VS Code
+                            <br />Bootstrap <br />jQuery
                         </p>
                     </div>
                     <div class="col-6 col-lg-4">
-                        <img loading="lazy" src="/img/back-end.svg" alt="Frontend" class="section-img">
+                        <img
+                            loading="lazy"
+                            src="/img/back-end.svg"
+                            alt="Frontend"
+                            class="section-img"
+                        />
                         <h5 class="section-title">Backend</h5>
                         <p>
                             <span class="purple-title">MEN Stack</span>
-                            <br>MongoDB, Express, Node.js
+                            <br />MongoDB, Express, Node.js
                         </p>
                         <p>
-                            <span class="purple-title"><%= text.SECTION2.MODULES_I_USE %></span>
-                            <br>Passport.js
-                            <br>Google oAuth 2.0
-                            <br>Mongoose
-                            <br>EJS
-                            <br>Socket.io
+                            <span class="purple-title"
+                                ><%= text.SECTION2.MODULES_I_USE %></span
+                            >
+                            <br />Passport.js <br />Google oAuth 2.0
+                            <br />Mongoose <br />EJS <br />Socket.io
                         </p>
                     </div>
                 </div>
@@ -63,7 +93,6 @@
         </div>
 
         <div id="particles-js"></div>
-
     </div>
     <div class="section" id="section3">
         <div class="container text-center main-header mx-auto">
@@ -71,28 +100,49 @@
             <div class="main-subheader">
                 <div class="row justify-content-around mt-5">
                     <div class="col-6 col-lg-4">
-                        <img loading="lazy" src="/img/responsive.svg" alt="Responsive" class="section-img">
+                        <img
+                            loading="lazy"
+                            src="/img/responsive.svg"
+                            alt="Responsive"
+                            class="section-img"
+                        />
                         <p>
-                            <span class="purple-title"><%= text.SECTION3.RESPONSIVE.TITLE %></span>
-                            <br><%= text.SECTION3.RESPONSIVE.TEXT1 %>
-                            <br><%= text.SECTION3.RESPONSIVE.TEXT2 %>
+                            <span class="purple-title"
+                                ><%= text.SECTION3.RESPONSIVE.TITLE %></span
+                            >
+                            <br /><%= text.SECTION3.RESPONSIVE.TEXT1 %>
+                            <br /><%= text.SECTION3.RESPONSIVE.TEXT2 %>
                         </p>
                     </div>
                     <div class="col-6 col-lg-4">
-                        <img loading="lazy" src="/img/speed.svg" alt="Speed" class="section-img">
+                        <img
+                            loading="lazy"
+                            src="/img/speed.svg"
+                            alt="Speed"
+                            class="section-img"
+                        />
                         <p>
-                            <span class="purple-title"><%= text.SECTION3.FAST.TITLE %></span>
-                            <br><%= text.SECTION3.FAST.TEXT1 %>
-                            <br><%= text.SECTION3.FAST.TEXT2 %>
+                            <span class="purple-title"
+                                ><%= text.SECTION3.FAST.TITLE %></span
+                            >
+                            <br /><%= text.SECTION3.FAST.TEXT1 %> <br /><%=
+                            text.SECTION3.FAST.TEXT2 %>
                         </p>
                     </div>
                     <div class="col-6 col-lg-4">
-                        <img loading="lazy" src="/img/simplicity.svg" alt="Simplicity" class="section-img">
+                        <img
+                            loading="lazy"
+                            src="/img/simplicity.svg"
+                            alt="Simplicity"
+                            class="section-img"
+                        />
                         <p>
-                            <span class="purple-title"><%= text.SECTION3.INTERFACES.TITLE %></span>
-                            <br><%= text.SECTION3.INTERFACES.TEXT1 %>
-                            <br><%= text.SECTION3.INTERFACES.TEXT2 %>
-                            <br><%= text.SECTION3.INTERFACES.TEXT3 %>
+                            <span class="purple-title"
+                                ><%= text.SECTION3.INTERFACES.TITLE %></span
+                            >
+                            <br /><%= text.SECTION3.INTERFACES.TEXT1 %>
+                            <br /><%= text.SECTION3.INTERFACES.TEXT2 %>
+                            <br /><%= text.SECTION3.INTERFACES.TEXT3 %>
                         </p>
                     </div>
                 </div>
@@ -104,28 +154,46 @@
             <h1><%= text.SECTION4.CUTTING_EDGE %></h1>
             <div class="main-subheader">
                 <%= text.SECTION4.ALWAYS_UPDATED %>
-                <br><%= text.SECTION4.LATEST_TECH %>
+                <br /><%= text.SECTION4.LATEST_TECH %>
                 <div class="row justify-content-around mt-lg-2">
                     <div class="col-6 col-lg-4">
-                        <img loading="lazy" src="/img/flashhtml.svg" alt="Flash HTML" class="img-fluid">
+                        <img
+                            loading="lazy"
+                            src="/img/flashhtml.svg"
+                            alt="Flash HTML"
+                            class="img-fluid"
+                        />
                     </div>
                     <div class="col-6 col-lg-4 mt-lg-5 pt-lg-5">
-                        <img loading="lazy" src="/img/phpnode.svg" alt="PHP Node.js" class="img-fluid">
+                        <img
+                            loading="lazy"
+                            src="/img/phpnode.svg"
+                            alt="PHP Node.js"
+                            class="img-fluid"
+                        />
                     </div>
                     <div class="col-6 col-lg-4">
-                        <img loading="lazy" src="/img/mysqlmongo.svg" alt="MySQL MongoDB" class="img-fluid">
+                        <img
+                            loading="lazy"
+                            src="/img/mysqlmongo.svg"
+                            alt="MySQL MongoDB"
+                            class="img-fluid"
+                        />
                     </div>
                 </div>
             </div>
         </div>
 
         <div id="section4-background">
-            <img loading="lazy" id="section4-background-img" src="/img/section-background.png" alt="Sfondo">
+            <img
+                loading="lazy"
+                id="section4-background-img"
+                src="/img/section-background.png"
+                alt="Sfondo"
+            />
         </div>
-
     </div>
     <div class="section hero" id="section5">
-
         <div class="cube"></div>
         <div class="cube"></div>
         <div class="cube"></div>
@@ -135,51 +203,84 @@
 
         <div class="container text-center main-header mx-auto">
             <h1><%= text.SECTION5.PROJECTS %></h1>
-            <div class="main-subheader">
-                <%= text.SECTION5.SOME_PROJECTS %>
-            </div>
+            <div class="main-subheader"><%= text.SECTION5.SOME_PROJECTS %></div>
 
             <div class="row mt-5 justify-content-center">
-
                 <div class="col-12 col-sm-6">
                     <div class="card">
-                        <a class="no-link" href="https://www.coronavirus-charts.com" target="_blank">
-                            <img loading="lazy" class="card-img-top" src="/img/coronavirus-charts.png"
-                                alt="Coronavirus Charts">
+                        <a
+                            class="no-link"
+                            href="https://www.coronavirus-charts.com"
+                            target="_blank"
+                        >
+                            <img
+                                loading="lazy"
+                                class="card-img-top"
+                                src="/img/coronavirus-charts.png"
+                                alt="Coronavirus Charts"
+                            />
                             <div class="card-body">
                                 <h5 class="card-title">Coronavirus Charts</h5>
-                                <p class="card-text"><%= text.SECTION5.CORONAVIRUS_CHARTS %></p>
-                                <span class="btn btn-primary"><%= text.SECTION5.OPEN %></span>
+                                <p class="card-text">
+                                    <%= text.SECTION5.CORONAVIRUS_CHARTS %>
+                                </p>
+                                <span class="btn btn-primary"
+                                    ><%= text.SECTION5.OPEN %></span
+                                >
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 mt-3 mt-sm-0">
                     <div class="card">
-                        <a class="no-link" href="https://classroom.bitrey.it" target="_blank">
-                            <img loading="lazy" class="card-img-top" src="/img/bitrey-classroom.png"
-                                alt="Bitrey Classroom">
+                        <a
+                            class="no-link"
+                            href="https://classroom.bitrey.it"
+                            target="_blank"
+                        >
+                            <img
+                                loading="lazy"
+                                class="card-img-top"
+                                src="/img/bitrey-classroom.png"
+                                alt="Bitrey Classroom"
+                            />
                             <div class="card-body">
                                 <h5 class="card-title">Bitrey Classroom</h5>
-                                <p class="card-text"><%= text.SECTION5.BITREY_CLASSROOM %></p>
-                                <span class="btn btn-primary"><%= text.SECTION5.OPEN %></span>
+                                <p class="card-text">
+                                    <%= text.SECTION5.BITREY_CLASSROOM %>
+                                </p>
+                                <span class="btn btn-primary"
+                                    ><%= text.SECTION5.OPEN %></span
+                                >
                             </div>
                         </a>
                     </div>
                 </div>
                 <div class="col-12 col-sm-6 mt-3">
                     <div class="card">
-                        <a class="no-link" href="http://dubito.bitrey.it" target="_blank">
-                            <img loading="lazy" class="card-img-top" src="/img/dubito-online.jpg" alt="Dubito Online">
+                        <a
+                            class="no-link"
+                            href="http://dubito.bitrey.it"
+                            target="_blank"
+                        >
+                            <img
+                                loading="lazy"
+                                class="card-img-top"
+                                src="/img/dubito-online.jpg"
+                                alt="Dubito Online"
+                            />
                             <div class="card-body">
                                 <h5 class="card-title">Dubito Online</h5>
-                                <p class="card-text"><%= text.SECTION5.DUBITO_ONLINE %></p>
-                                <span class="btn btn-primary"><%= text.SECTION5.OPEN %></span>
+                                <p class="card-text">
+                                    <%= text.SECTION5.DUBITO_ONLINE %>
+                                </p>
+                                <span class="btn btn-primary"
+                                    ><%= text.SECTION5.OPEN %></span
+                                >
                             </div>
                         </a>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
@@ -188,66 +289,127 @@
             <h1><%= text.SECTION6.ANNUAL_PLAN %></h1>
             <div class="main-subheader">
                 <%= text.SECTION6.SUBHEADER1 %>
-                <br><%= text.SECTION6.SUBHEADER2 %>
+                <br /><%= text.SECTION6.SUBHEADER2 %>
             </div>
             <div class="row justify-content-around mt-5">
                 <div class="col-6 col-lg-3">
-                    <img loading="lazy" src="/img/server.svg" alt="Hosting" class="section-img">
+                    <img
+                        loading="lazy"
+                        src="/img/server.svg"
+                        alt="Hosting"
+                        class="section-img"
+                    />
                     <p>
-                        <span class="purple-title"><%= text.SECTION6.HOSTING.TITLE %></span>
-                        <br><%= text.SECTION6.HOSTING.TEXT1 %>
-                        <br><%= text.SECTION6.HOSTING.TEXT2 %>
+                        <span class="purple-title"
+                            ><%= text.SECTION6.HOSTING.TITLE %></span
+                        >
+                        <br /><%= text.SECTION6.HOSTING.TEXT1 %> <br /><%=
+                        text.SECTION6.HOSTING.TEXT2 %>
                     </p>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <img loading="lazy" src="/img/domain.svg" alt="Domain" class="section-img">
+                    <img
+                        loading="lazy"
+                        src="/img/domain.svg"
+                        alt="Domain"
+                        class="section-img"
+                    />
                     <p>
-                        <span class="purple-title"><%= text.SECTION6.DOMAIN.TITLE %></span>
-                        <br><%= text.SECTION6.DOMAIN.TEXT1 %>
-                        <span style="font-style: italic;"><%= text.SECTION6.DOMAIN.TEXT2 %></span>)
-                        <%= text.SECTION6.DOMAIN.TEXT3 %>
+                        <span class="purple-title"
+                            ><%= text.SECTION6.DOMAIN.TITLE %></span
+                        >
+                        <br /><%= text.SECTION6.DOMAIN.TEXT1 %>
+                        <span style="font-style: italic"
+                            ><%= text.SECTION6.DOMAIN.TEXT2 %></span
+                        >) <%= text.SECTION6.DOMAIN.TEXT3 %>
                     </p>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <img loading="lazy" src="/img/email.svg" alt="Email" class="section-img">
+                    <img
+                        loading="lazy"
+                        src="/img/email.svg"
+                        alt="Email"
+                        class="section-img"
+                    />
                     <p>
-                        <span class="purple-title"><%= text.SECTION6.EMAIL.TITLE %></span>
-                        <br><%= text.SECTION6.EMAIL.TEXT1 %>
-                        <span style="font-style: italic;"><%= text.SECTION6.EMAIL.TEXT2 %></span>).
+                        <span class="purple-title"
+                            ><%= text.SECTION6.EMAIL.TITLE %></span
+                        >
+                        <br /><%= text.SECTION6.EMAIL.TEXT1 %>
+                        <span style="font-style: italic"
+                            ><%= text.SECTION6.EMAIL.TEXT2 %></span
+                        >).
                     </p>
                 </div>
                 <div class="col-6 col-lg-3">
-                    <img loading="lazy" src="/img/ssl.svg" alt="SSL" class="section-img">
+                    <img
+                        loading="lazy"
+                        src="/img/ssl.svg"
+                        alt="SSL"
+                        class="section-img"
+                    />
                     <p>
-                        <span class="purple-title"><%= text.SECTION6.SSL.TITLE %></span>
-                        <br><%= text.SECTION6.SSL.TEXT1 %>
-                        <br><%= text.SECTION6.SSL.TEXT2 %>
-                        <br><%= text.SECTION6.SSL.TEXT3 %>
+                        <span class="purple-title"
+                            ><%= text.SECTION6.SSL.TITLE %></span
+                        >
+                        <br /><%= text.SECTION6.SSL.TEXT1 %> <br /><%=
+                        text.SECTION6.SSL.TEXT2 %> <br /><%=
+                        text.SECTION6.SSL.TEXT3 %>
                     </p>
                 </div>
             </div>
         </div>
     </div>
     <div class="section" id="section7">
-        <div class="container text-center main-header mx-auto" id="section7-subdiv">
+        <div
+            class="container text-center main-header mx-auto"
+            id="section7-subdiv"
+        >
             <h1><%= text.SECTION7.INTERESTED %></h1>
             <div class="main-subheader">
                 <form class="mt-3 mb-5" id="emailForm">
                     <div class="row justify-content-center">
                         <div class="col-6 col-lg-4">
-                            <label for="name" class="mb-0 mb-md-2"><%= text.SECTION7.NAME %></label>
-                            <input type="text" class="form-control" id="name" autocomplete="given-name"
-                                placeholder="<%= text.SECTION7.NAME %>" name="name" required>
+                            <label for="name" class="mb-0 mb-md-2"
+                                ><%= text.SECTION7.NAME %></label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="name"
+                                autocomplete="given-name"
+                                placeholder="<%= text.SECTION7.NAME %>"
+                                name="name"
+                                required
+                            />
                         </div>
                         <div class="col-6 col-lg-4">
-                            <label for="surname" class="mb-0 mb-md-2"><%= text.SECTION7.SURNAME %></label>
-                            <input type="text" class="form-control" id="surname" autocomplete="family-name"
-                                placeholder="<%= text.SECTION7.SURNAME %>" name="surname" required>
+                            <label for="surname" class="mb-0 mb-md-2"
+                                ><%= text.SECTION7.SURNAME %></label
+                            >
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="surname"
+                                autocomplete="family-name"
+                                placeholder="<%= text.SECTION7.SURNAME %>"
+                                name="surname"
+                                required
+                            />
                         </div>
                         <div class="col-6 col-lg-4">
-                            <label for="email" class="mb-0 mb-md-2"><%= text.SECTION7.EMAIL %></label>
-                            <input type="email" class="form-control" id="email" autocomplete="email"
-                                placeholder="<%= text.SECTION7.EMAIL %>" name="email" required>
+                            <label for="email" class="mb-0 mb-md-2"
+                                ><%= text.SECTION7.EMAIL %></label
+                            >
+                            <input
+                                type="email"
+                                class="form-control"
+                                id="email"
+                                autocomplete="email"
+                                placeholder="<%= text.SECTION7.EMAIL %>"
+                                name="email"
+                                required
+                            />
                         </div>
                     </div>
                     <div class="row pt-3">
@@ -255,42 +417,81 @@
                             <div id="editor">
                                 <p><%= text.SECTION7.HELLO1 %></p>
                                 <p><%= text.SECTION7.HELLO2 %></p>
-                                <p><br></p>
+                                <p><br /></p>
                             </div>
                         </div>
-                        <input type="hidden" id="bodyText" name="text" style="display: none;">
+                        <input
+                            type="hidden"
+                            id="bodyText"
+                            name="text"
+                            style="display: none"
+                        />
                     </div>
-                    <div style="display: block; margin-top: 80px;" class="mx-auto text-center">
-                        <div class="g-recaptcha" data-sitekey="6LdL6ekUAAAAAG-HmaWXFj8H6l29jsUGVv33rIv1"></div>
+                    <div
+                        style="display: block; margin-top: 80px"
+                        class="mx-auto text-center"
+                    >
+                        <div
+                            class="g-recaptcha"
+                            data-sitekey="6LdL6ekUAAAAAG-HmaWXFj8H6l29jsUGVv33rIv1"
+                        ></div>
                         <br />
                     </div>
-                    <div style="position: relative; height: 20px;">
-                        <button id="sendForm" type="submit"><%= text.SECTION7.SEND %></button>
+                    <div style="position: relative; height: 20px">
+                        <button id="sendForm" type="submit">
+                            <%= text.SECTION7.SEND %>
+                        </button>
                     </div>
-                    <p id="error" style="display: none;"></p>
+                    <p id="error" style="display: none"></p>
                 </form>
-                <p><%= text.SECTION7.CONTACT_ALTERNATIVE %> <a href="mailto:info@bitrey.it"
-                        style="color: #752b8c;">info@bitrey.it</a></p>
+                <p>
+                    <%= text.SECTION7.CONTACT_ALTERNATIVE %>
+                    <a href="mailto:info@bitrey.it" style="color: #752b8c"
+                        >info@bitrey.it</a
+                    >
+                </p>
             </div>
         </div>
-        <div class="text-center py-2 mt-3" style="font-size: 0.8rem;">
+        <div class="text-center py-2 mt-3" style="font-size: 0.8rem">
             <%= text.SECTION7.CREDITS1 %>
-            <a style="color: #212529;" target="_blank"
-                href="https://www.freepik.com/free-photos-vectors/background">Background vector created by starline -
-                www.freepik.com</a>
-            <br><%= text.SECTION7.CREDITS2 %> <a style="color: #212529;" target="_blank"
-                href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+            <a
+                style="color: #212529"
+                target="_blank"
+                href="https://www.freepik.com/free-photos-vectors/background"
+                >Background vector created by starline - www.freepik.com</a
+            >
+            <br /><%= text.SECTION7.CREDITS2 %>
+            <a
+                style="color: #212529"
+                target="_blank"
+                href="https://www.flaticon.com/"
+                title="Flaticon"
+            >
+                www.flaticon.com</a
+            >
         </div>
         <div class="mt-3 text-center">
             <a href="/?lang=en" class="no-link">
-                <img loading="lazy" src="/img/en.svg" alt="English" style="max-height: 2rem; margin-right: 0.3rem;">
+                <img
+                    loading="lazy"
+                    src="/img/en.svg"
+                    alt="English"
+                    style="max-height: 2rem; margin-right: 0.3rem"
+                />
             </a>
             <a href="/?lang=it" class="no-link">
-                <img loading="lazy" src="/img/it.svg" alt="Italiano" style="max-height: 2rem; margin-left: 0.3rem;">
+                <img
+                    loading="lazy"
+                    src="/img/it.svg"
+                    alt="Italiano"
+                    style="max-height: 2rem; margin-left: 0.3rem"
+                />
             </a>
         </div>
     </div>
-    <p style="display: none;" id="contactText"><%= JSON.stringify(text.CONTACT) %></p>
+    <p style="display: none" id="contactText">
+        <%= JSON.stringify(text.CONTACT) %>
+    </p>
 </main>
 
 <%- include ('./partials/footer') %>
@@ -298,6 +499,10 @@
 <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
 <script src="/js/jquery.animateTyping.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.4.0/dist/simpleParallax.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+<script
+    src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"
+    integrity="sha512-jq8sZI0I9Og0nnZ+CfJRnUzNSDKxr/5Bvha5bn7AHzTnRyxUfpUArMzfH++mwE/hb2efOo1gCAgI+1RMzf8F7g=="
+    crossorigin="anonymous"
+></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animsition/4.0.2/js/animsition.min.js"></script>
 <script src="/minified/homepage.js" defer></script>

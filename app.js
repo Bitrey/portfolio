@@ -9,8 +9,8 @@ const fetch = require("node-fetch");
 const { stringify } = require("querystring");
 const createLocaleMiddleware = require("express-locale");
 const cookieParser = require("cookie-parser");
-const helmet = require("helmet");
-const hsts = require("hsts");
+// const helmet = require("helmet");
+// const hsts = require("hsts");
 const text = {
     it: require("./locales/it.json"),
     en: require("./locales/en.json")
@@ -20,13 +20,23 @@ require("dotenv").config();
 app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(createLocaleMiddleware());
 
-app.use(helmet());
+// app.use(helmet.contentSecurityPolicy());
+// app.use(helmet.dnsPrefetchControl());
+// app.use(helmet.expectCt());
+// app.use(helmet.frameguard());
+// app.use(helmet.hidePoweredBy());
+// app.use(helmet.hsts());
+// app.use(helmet.ieNoOpen());
+// app.use(helmet.noSniff());
+// app.use(helmet.permittedCrossDomainPolicies());
+// app.use(helmet.referrerPolicy());
+// app.use(helmet.xssFilter());
 
-app.use(
-    hsts({
-        maxAge: 15552000 // 180 days in seconds
-    })
-);
+// app.use(
+//     hsts({
+//         maxAge: 15552000 // 180 days in seconds
+//     })
+// );
 
 // MONGOOSE SETUP
 mongoose.set("useNewUrlParser", true);
@@ -205,13 +215,11 @@ app.post("/contact", async (req, res) => {
     const contactText = text[lang].CONTACT;
 
     if (!req.body.captcha) {
-        return res
-            .status(401)
-            .json({
-                success: false,
-                reason: "SOLVE_CAPTCHA",
-                msg: contactText.SOLVE_CAPTCHA
-            });
+        return res.status(401).json({
+            success: false,
+            reason: "SOLVE_CAPTCHA",
+            msg: contactText.SOLVE_CAPTCHA
+        });
     }
 
     // Secret key
@@ -230,13 +238,11 @@ app.post("/contact", async (req, res) => {
 
     // If not successful
     if (body.success !== undefined && !body.success)
-        return res
-            .status(401)
-            .json({
-                success: false,
-                reason: "FAILED_CAPTCHA",
-                msg: contactText.FAILED_CAPTCHA
-            });
+        return res.status(401).json({
+            success: false,
+            reason: "FAILED_CAPTCHA",
+            msg: contactText.FAILED_CAPTCHA
+        });
 
     sendMail(req.body, res, contactText);
 });

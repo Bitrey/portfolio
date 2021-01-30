@@ -17,7 +17,6 @@
     "express": "^4.17.1",
     "express-locale": "^2.0.0",
     "get-user-locale": "^1.4.0",
-    "helmet": "^4.2.0",
     "hsts": "^2.2.0",
     "mongoose": "^5.10.0",
     "node-fetch": "^2.6.1",
