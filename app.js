@@ -9,8 +9,8 @@ const fetch = require("node-fetch");
 const { stringify } = require("querystring");
 const createLocaleMiddleware = require("express-locale");
 const cookieParser = require("cookie-parser");
-// const helmet = require("helmet");
-// const hsts = require("hsts");
+const helmet = require("helmet");
+const hsts = require("hsts");
 const text = {
     it: require("./locales/it.json"),
     en: require("./locales/en.json")
@@ -21,22 +21,22 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(createLocaleMiddleware());
 
 // app.use(helmet.contentSecurityPolicy());
-// app.use(helmet.dnsPrefetchControl());
-// app.use(helmet.expectCt());
-// app.use(helmet.frameguard());
-// app.use(helmet.hidePoweredBy());
-// app.use(helmet.hsts());
-// app.use(helmet.ieNoOpen());
-// app.use(helmet.noSniff());
-// app.use(helmet.permittedCrossDomainPolicies());
-// app.use(helmet.referrerPolicy());
-// app.use(helmet.xssFilter());
+app.use(helmet.dnsPrefetchControl());
+app.use(helmet.expectCt());
+app.use(helmet.frameguard());
+app.use(helmet.hidePoweredBy());
+app.use(helmet.hsts());
+app.use(helmet.ieNoOpen());
+app.use(helmet.noSniff());
+app.use(helmet.permittedCrossDomainPolicies());
+app.use(helmet.referrerPolicy());
+app.use(helmet.xssFilter());
 
-// app.use(
-//     hsts({
-//         maxAge: 15552000 // 180 days in seconds
-//     })
-// );
+app.use(
+    hsts({
+        maxAge: 15552000 // 180 days in seconds
+    })
+);
 
 // MONGOOSE SETUP
 mongoose.set("useNewUrlParser", true);
