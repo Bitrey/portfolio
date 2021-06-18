@@ -75,9 +75,8 @@
             "TITLE": "Encryption with an SSL certificate",
             "TEXT1": "See the padlock icon, up there next to the website address?",
             "TEXT2": "It shows that the website has a valid certificate which makes it secure.",
-            "TEXT3": "With the annual plan, I'll install al SSL certificate to ensure the maximum safety."
+            "TEXT3": "With the annual plan, I'll install SSL certificate to ensure maximum safety."
         }
-
     },
     "SECTION7": {
         "HEADER": "Contacts",
