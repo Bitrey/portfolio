@@ -14,7 +14,7 @@
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "ejs": "^3.1.5",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "express-locale": "^2.0.0",
     "get-user-locale": "^1.4.0",
     "helmet": "^4.4.1",
